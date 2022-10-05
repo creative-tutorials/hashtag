@@ -1,0 +1,48 @@
+#textBox {
+  position: fixed;
+  bottom: 0px;
+  left: 50px;
+  /* translate: -35% -50%; */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 20px;
+  width: 100%;
+  max-width: 700px;
+}
+#box-cols {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#bx-cl-right button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #6f38c5;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-weight: 500;
+}
+textarea {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: 2px solid rgb(213, 227, 230);
+  padding: 20px;
+  outline: none;
+  border-radius: 5px;
+}
+.error-component {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+#error {
+  color: rgb(102, 34, 34);
+  font-weight: 500;
+}

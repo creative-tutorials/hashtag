@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --colorA: rgb(255, 255, 255);
+  --light: rgb(237, 242, 246);
+  --dark: rgb(39, 44, 59);
+  --light-btn: rgb(14, 109, 253);
+}
+body {
+  background: var(--light);
+}
