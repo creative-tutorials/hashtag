@@ -66,12 +66,12 @@ yarn install
 
 ## 🎈 Usage <a name="usage"></a>
 
-Hashtag is currently in beta but if you want to use it in production, you can install it manually
+Hashtag is currently in beta but if you want to use it in development, you can install it manually
 
 To use **Hashtag** you can start by making a post, send something nice, and then your post should be available for others to see.
 
 ```md
-- Please not that all features will be available soon - this is just a production feature, and still on beta release
+- Please not that all features will be available soon - this is just a development feature, and still on beta release
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
