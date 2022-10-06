@@ -86,7 +86,7 @@ To use **Hashtag** you can start by making a post, send something nice, and then
 
 - [@Treasure](https://github.com/creative-tutorials) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/creative-tutorials/hashtag/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
