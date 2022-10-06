@@ -59,7 +59,7 @@ export default function textBox() {
       </div>
       <div className="hashtag-text-component">
         <textarea name="" id="" ref={textarea} cols={30} rows={10}></textarea>
-        <div className={detectFormError ? "error-component" : null}>
+        <div className={detectFormError ? "error-component" : undefined}>
           <span id="error" ref={spanElement}></span>
         </div>
       </div>
