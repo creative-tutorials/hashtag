@@ -91,5 +91,5 @@ See also the list of [contributors](https://github.com/creative-tutorials/hashta
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 <!-- - Hat tip to anyone whose code was used -->
-- Thanks to [@Twitter](twitter.com/) for the idea and inspiration
+- Thanks to [@Twitter](https://twitter.com/) for the idea and inspiration
 <!-- - References -->
