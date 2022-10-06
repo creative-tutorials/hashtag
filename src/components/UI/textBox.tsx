@@ -27,7 +27,6 @@ export default function textBox() {
       setdetectFormError(true);
       spanElement.current.textContent = memoValue.value;
     } else {
-      console.log("text box is not empty");
       message.value = "";
       setdetectFormError(false);
       spanElement.current.textContent = memoValue.value;
