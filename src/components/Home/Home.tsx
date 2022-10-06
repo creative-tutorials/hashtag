@@ -7,7 +7,7 @@ import { Col1Tabs } from "../UI/col1Tabs";
 import logo from "/hashtag_logo.png";
 import portrait from "/ab1.jpg";
 import React from "react";
-import LazyLoad from "react-lazy-load";
+import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
 const HashtagHomePage = () => {
   const [isRendering, setisRendering] = useState(false);
   const _box_item: any = useRef();
@@ -19,6 +19,10 @@ const HashtagHomePage = () => {
   });
 
   const quotes = HashTagQuotes();
+  /**
+   * Returns a random quote from the quotes array.
+   * @returns {string} - A random quote from the quotes array.
+   */
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   const lodge = useMemo(() => randomQuote, [randomQuote]);
   console.log(lodge);
@@ -28,8 +32,11 @@ const HashtagHomePage = () => {
     if (!isRendering) {
       setisRendering(false);
       let inputPlaceholder = input.current.placeholder;
+      /**
+       * Sets the placeholder text of the input element to a random quote from the quote array.       
+       * @returns None       
+       */
       input.current.placeholder = randomQuote;
-      // Carousel();
     } else {
       setisRendering(true);
     }
@@ -41,9 +48,18 @@ const HashtagHomePage = () => {
     console.log("carousel loaded");
     let _bx = _box_item.current;
     let count = 0;
+    /**
+     * Scrolls the browser window to the left.           
+     * @returns None           
+     */
     _bx.scrollLeft = 0;
     const carouselInterval = setInterval(() => {
       count += 187;
+      /**
+       * Scrolls the browser window to the given count.           
+       * @param {number} count - the number of pixels to scroll the window to.           
+       * @returns None           
+       */
       _bx.scrollLeft = count;
       console.log(count);
       if (count === 187) {
