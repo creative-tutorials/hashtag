@@ -71,10 +71,10 @@ export function blobConverter(dataURLResult:any, fileType:any, fileName:any) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          apikey:
-          import.meta.env.API_KEY,
+          apikey: import.meta.env.VITE_API_KEY,
         },
         body: JSON.stringify({
+          email: 'info@mail.com',
           files: {
             filename: fileName,
             dataURL: blobUrl,
