@@ -3,12 +3,16 @@
   height: 100%;
   display: flex;
   /* align-items: center; */
+  /* flex-wrap: wrap; */
   padding: 0 30px;
 }
 .col-1 {
-  padding: 20px;
   width: 100%;
-  /* max-width: 300px; */
+  max-width: 400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100%;
 }
 .col-1 .col-1-tabs .col-1-tab-em .tab-em {
   width: 300px;
@@ -38,7 +42,7 @@
   margin-left: 15px;
 }
 .col-1-tab-send-button button {
-  width: 100%;
+  width: 300px;
   padding: 14px;
   border-radius: 8px;
   outline: none;
@@ -55,8 +59,7 @@
 }
 .col-2 {
   width: 100%;
-  margin-top: 50px;
-  padding-left: 30px;
+  margin-top: 20px;
 }
 .col-2 .col-2-header {
   display: flex;
@@ -133,7 +136,6 @@
   align-items: center;
   margin-top: 20px;
   width: 100%;
-  max-width: 560px;
   overflow: auto;
   transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   scroll-behavior: smooth;
@@ -264,8 +266,15 @@
 }
 .includeVid {
   width: 100%;
+  height: 100%;
 }
 #includeVid video {
   width: 100%;
-  height: 500px;
+  height: 400px;
+}
+@media screen and (max-width: 1166px) {
+  .friends_box #_bx_item {
+    width: 100%;
+    max-width: 560px;
+  }
 }
