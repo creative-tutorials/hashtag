@@ -1,0 +1,210 @@
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#form_container {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+#cms {
+  margin-top: 25px;
+}
+#inputbox {
+  width: 100%;
+  position: relative;
+}
+#inputbox input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1.4px solid #d7d7d7;
+  outline: none;
+  border-radius: 3px;
+}
+#inputbox:nth-child(2) {
+  margin-top: 10px;
+}
+#inputbox i {
+  position: absolute;
+  right: 15px;
+  top: 35px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #5b5b5b;
+  cursor: pointer;
+}
+#fgtpassword {
+  text-align: right;
+  margin-top: 9px;
+}
+#fgtpassword a {
+  text-decoration: none;
+  color: #6f38c5;
+}
+#tickbox {
+  margin-top: 9px;
+}
+#checkbox #check_text {
+  color: rgb(56, 59, 59);
+  user-select: none;
+}
+#checkbox {
+  display: flex;
+  align-items: center;
+}
+#checkbox label #label {
+  width: 20px;
+  height: 20px;
+  /* background-color: red; */
+  border: 2px solid #d7d7d7;
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#checkbox label #label::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  background-color: #fff;
+  width: 2px;
+  height: 50%;
+  z-index: 99;
+  rotate: -28deg;
+  scale: 0;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+#checkbox label #label::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 4px;
+  background-color: #fff;
+  width: 2px;
+  height: 70%;
+  rotate: 40deg;
+  scale: 0;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+#check_text {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+#checkbox input[type="checkbox"]:checked ~ label #label::before {
+  background-color: #6f38c5;
+  scale: 1;
+}
+#checkbox input[type="checkbox"]:checked ~ label #label::after {
+  background-color: #6f38c5;
+  scale: 1;
+}
+#signoption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+#signoption span {
+  color: rgb(113, 113, 113);
+  position: relative;
+  font-size: 15px;
+}
+#signoption span::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  display: block;
+  width: 140px;
+  height: 1px;
+  background-color: rgb(167, 167, 167);
+}
+#signoption span::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  display: block;
+  width: 140px;
+  height: 1px;
+  background-color: rgb(167, 167, 167);
+}
+#options i {
+  font-size: 1.8rem;
+  color: rgb(167, 167, 167);
+}
+#options i:hover {
+  cursor: pointer;
+}
+#options i:nth-child(2) {
+  margin-left: 5px;
+}
+#reqbtn {
+  margin-top: 8px;
+}
+#reqbtn button {
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6f38c5;
+  font-weight: 500;
+  color: #fefefe;
+  font-size: 1.2rem;
+  position: relative;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+#reqbtn button:hover {
+  cursor: pointer;
+}
+
+#reqbtn button::before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+#reqbtn button:hover::before {
+  content: "Log In >";
+  width: 100%;
+  background-color: #5b4284;
+}
+#reqbtn {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+#reqbtn a {
+  margin-left: 5px;
+  text-decoration: none;
+  color: #5b4284;
+}
+#form_error {
+  font-size: 14px;
+  margin-top: 2px;
+  font-weight: 400;
+  color: rgb(134, 51, 51);
+}
