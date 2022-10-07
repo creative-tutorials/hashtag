@@ -26,7 +26,7 @@
 - [Getting Started](#getting_started)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [Contributing](../hashtag/CONTRIBUTING.md)
+- [Contributing](https://github.com/creative-tutorials/hashtag/blob/master/CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
