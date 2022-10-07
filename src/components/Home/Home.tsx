@@ -9,14 +9,16 @@ import portrait from "/ab1.jpg";
 import React from "react";
 import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
 const HashtagHomePage = () => {
-  const [isRendering, setisRendering] = useState(false);
+  const dataFetchedRef = useRef(false);
   const _box_item: any = useRef();
+  
   useEffect(() => {
-    isRendering ? null : [LoadedPage(), Carousel()];
-    return () => {
-      setisRendering(false);
-    };
-  });
+    if (dataFetchedRef.current) return;
+      dataFetchedRef.current = true;
+      LoadedPage();
+      Carousel();
+  },[]);
+
 
   const quotes = HashTagQuotes();
   /**
@@ -29,17 +31,14 @@ const HashtagHomePage = () => {
   const input: any = useRef();
 
   const LoadedPage = () => {
-    if (!isRendering) {
-      setisRendering(false);
+    if (!dataFetchedRef) {
       let inputPlaceholder = input.current.placeholder;
       /**
        * Sets the placeholder text of the input element to a random quote from the quote array.       
        * @returns None       
        */
       input.current.placeholder = randomQuote;
-    } else {
-      setisRendering(true);
-    }
+    } 
   };
   const ReqFile = (event: any) => {
     ReadFileFromSystem(event);
