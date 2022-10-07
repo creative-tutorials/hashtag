@@ -36,7 +36,7 @@ Hashtag is a social media platform that provides the aim for users to connect wi
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-Hahstag is free and open-source to memebers of and withing the GitHub community.
+Hahstag is free and open-source to memebers of and within the GitHub community.
 
 ### Installing
 
@@ -52,7 +52,7 @@ git clone <repo url>
 
 ### Step2
 
-Next the dependencies
+Next install the dependencies
 
 ```bash
 npm install
@@ -71,7 +71,7 @@ Hashtag is currently in beta but if you want to use it in development, you can i
 To use **Hashtag** you can start by making a post, send something nice, and then your post should be available for others to see.
 
 ```md
-- Please not that all features will be available soon - this is just a development feature, and still on beta release
+- Please note that all features will be available soon - this is just a development feature, and still on beta release
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
