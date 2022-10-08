@@ -85,7 +85,7 @@ To use **Hashtag** you can start by making a post, send something nice, and then
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@Treasure](https://github.com/creative-tutorials) - Idea & Initial work
-- [@NiiVx](https://github.com/NiiVx)
+- [@NiiVx](https://github.com/NiiVx) - An awesome Contributor
 
 See also the list of [contributors](https://github.com/creative-tutorials/hashtag/contributors) who participated in this project.
 
