@@ -34,7 +34,7 @@ function SignupPageComponent() {
         const response = await fetch("http://localhost:5301/signup", {
           method: "POST",
           headers: {
-            apikey: "3Gq67bFtUSDbcI3bdaulMUiVpnZTJ93B",
+            apikey: import.meta.env.VITE_API_KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -48,7 +48,11 @@ function SignupPageComponent() {
         if (response.ok) {
           const result = await response.json();
           message.value = "";
+          email_error.current.textContent = use_memo.value;
+          pswrd_error.current.textContent = use_memo.value;
+          age_error.current.textContent = use_memo.value;
           console.log(result);
+          localStorage.setItem('session', JSON.stringify(result));
         } else {
           const result = await response.json();
           message.value = result.error;
