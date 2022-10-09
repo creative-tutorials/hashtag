@@ -32,42 +32,46 @@ export default function textBox() {
       SendInputFieldDataToAPI(text_box.value);
     }
   };
-  const Session:any = JSON.parse(localStorage.getItem('session'));
-  console.log(Session)
+  const Session:any = localStorage.getItem('session');
+  const parsedData = JSON.parse(Session);
   async function SendInputFieldDataToAPI(field: string,) {
-    try {
-      const response = await fetch("http://localhost:5301/make_post", {
-        method: "POST",
-        headers: {
-          apikey: import.meta.env.VITE_API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          post: field,
-          username: 'Session.username',
-          email: 'Session.email',
-          password: 'Session.password',
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log(result);
-        errorMessage.current = result.message;
-        setdetectFormError(false);
-        spanElement.current.textContent = memoValue.current;
+    if(Session) {
+      try {
+        const response = await fetch("http://localhost:5301/make_post", {
+          method: "POST",
+          headers: {
+            apikey: import.meta.env.VITE_API_KEY,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            post: field,
+            username: 'Session.username',
+            email: 'Session.email',
+            password: 'Session.password',
+          }),
+        });
+  
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result);
+          errorMessage.current = result.message;
+          setdetectFormError(false);
+          spanElement.current.textContent = memoValue.current;
+        }
+        if (!response.ok) {
+          const result = await response.json();
+          console.log(result);
+          errorMessage.current = result.error;
+          setdetectFormError(true);
+          spanElement.current.textContent = memoValue.current;
+          /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
+          localStorage.setItem("showTextBox", "false");
+        }
+      } catch (err) {
+        console.error(err);
       }
-      if (!response.ok) {
-        const result = await response.json();
-        console.log(result);
-        errorMessage.current = result.error;
-        setdetectFormError(true);
-        spanElement.current.textContent = memoValue.current;
-        /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
-        localStorage.setItem("showTextBox", "false");
-      }
-    } catch (err) {
-      console.error(err);
+    } else {
+      alert("Unexpected Response: Looks like we couldn't find your session details, try creating an account to fix this issue")
     }
   }
   const getshowTextBox = localStorage.getItem("showTextBox");
