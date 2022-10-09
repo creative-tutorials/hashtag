@@ -1,4 +1,8 @@
-export function blobConverter(dataURLResult:any, fileType:any, fileName:any) {
+export function blobConverter(
+  dataURLResult: any,
+  fileType: any,
+  fileName: any
+) {
   let spliceContent = dataURLResult.split("png;base64,");
 
   /**
@@ -59,11 +63,10 @@ export function blobConverter(dataURLResult:any, fileType:any, fileName:any) {
   const b64Data = returnedData;
   const blob = b64toBlob(b64Data, contentType);
   const blobUrl = URL.createObjectURL(blob);
-  console.log(blobUrl);
 
   /**
-   * Sends the data to the API.           
-   * @returns None           
+   * Sends the data to the API.
+   * @returns None
    */
   const SendDataToAPI = async () => {
     try {
@@ -74,7 +77,7 @@ export function blobConverter(dataURLResult:any, fileType:any, fileName:any) {
           apikey: import.meta.env.VITE_API_KEY,
         },
         body: JSON.stringify({
-          email: 'info@mail.com',
+          email: "info@mail.com",
           files: {
             filename: fileName,
             dataURL: blobUrl,
@@ -85,6 +88,10 @@ export function blobConverter(dataURLResult:any, fileType:any, fileName:any) {
       if (response.ok) {
         const result = await response.json();
         console.log(result);
+      }
+      if (!response.ok) {
+        const result = await response.json();
+        alert(result.error);
       }
     } catch (err) {
       console.error(err);
