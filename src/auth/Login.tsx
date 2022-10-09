@@ -42,6 +42,9 @@ function LoginPageComponent() {
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          message.value = result.message;
+          email_error.current.textContent = use_memo.value;
+          pswrd_error.current.textContent = use_memo.value;
         } else {
           const result = await response.json();
           message.value = result.error;
