@@ -31,7 +31,7 @@ const HashtagHomePage = () => {
   const input: any = useRef();
 
   const LoadedPage = () => {
-    if (!dataFetchedRef) {
+    if (dataFetchedRef) {
       let inputPlaceholder = input.current.placeholder;
       /**
        * Sets the placeholder text of the input element to a random quote from the quote array.       
