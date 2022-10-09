@@ -1,54 +1,96 @@
 import "../../styles/designlab.css";
+
 import { useRef, useMemo, useState, useEffect } from "react";
 export default function textBox() {
-  const [active, setactive] = useState(false);
-  const textBox: any = useRef();
-  let loadcounter = 0;
-  useEffect(() => {
-    loadcounter++;
-    if (loadcounter > 1) return CheckActiveState();
-    else;
-    return () => {};
-  });
-
-  const message = {
-    value: "Hello World!",
-  };
-  const textarea: any = useRef();
+  let errorMessage = useRef("");
+  /**
+   * A hook that checks if the localStorage key is set.
+   * @returns A boolean that is true if the key is set.
+   */
+  const [LSKeyState, setcheckLSKeyState] = useState(false);
+  const textAreaInputElement: any = useRef();
+  const wrapBox: any = useRef();
+  let limitRendering: any = useRef(0);
   const spanElement: any = useRef();
-  const memoValue = useMemo(() => message, [message]);
+  const memoValue = useMemo(() => errorMessage, [errorMessage]);
   const [detectFormError, setdetectFormError] = useState(false);
 
+  useEffect(() => {
+    limitRendering.current++;
+    if (limitRendering.current > 1) return;
+    else CheckIfAllValueIsCorrect();
+  });
+
   const HashButton = () => {
-    const text_box = textarea.current;
+    const text_box = textAreaInputElement.current;
     if (!text_box.value) {
-      message.value =
-        "Hey Cutie💖 before you can make a post you would need to type something first :)";
+      errorMessage.current =
+        "Hey There before you can make a post you would need to type something first :)";
       setdetectFormError(true);
-      spanElement.current.textContent = memoValue.value;
+      spanElement.current.textContent = memoValue.current;
     } else {
-      message.value = "";
-      setdetectFormError(false);
-      spanElement.current.textContent = memoValue.value;
+      SendInputFieldDataToAPI(text_box.value);
     }
   };
-  function CheckActiveState() {
-    const getActiveState = localStorage.getItem("active");
+  const Session:any = JSON.parse(localStorage.getItem('session'));
+  console.log(Session)
+  async function SendInputFieldDataToAPI(field: string,) {
+    try {
+      const response = await fetch("http://localhost:5301/make_post", {
+        method: "POST",
+        headers: {
+          apikey: import.meta.env.VITE_API_KEY,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          post: field,
+          username: 'Session.username',
+          email: 'Session.email',
+          password: 'Session.password',
+        }),
+      });
 
-    if (getActiveState === "true") {
-      setactive(true);
-      textBox.current.classList.add("active");
-    } else {
-      setactive(false);
-      textBox.current.classList.remove("active");
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        errorMessage.current = result.message;
+        setdetectFormError(false);
+        spanElement.current.textContent = memoValue.current;
+      }
+      if (!response.ok) {
+        const result = await response.json();
+        console.log(result);
+        errorMessage.current = result.error;
+        setdetectFormError(true);
+        spanElement.current.textContent = memoValue.current;
+        /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
+        localStorage.setItem("showTextBox", "false");
+      }
+    } catch (err) {
+      console.error(err);
     }
   }
+  const getshowTextBox = localStorage.getItem("showTextBox");
+  /**
+   * Checks if the value of the showTextBox key in local storage is correct.
+   * @returns None
+   */
+  const CheckIfAllValueIsCorrect = () => {
+    if (getshowTextBox === "true") {
+      console.log("Show text box");
+      setcheckLSKeyState(true);
+    } else if (getshowTextBox === "false") {
+      setcheckLSKeyState(false);
+      console.log("Hide text box");
+    }
+    console.log(LSKeyState);
+  };
   return (
-    <div className="textBox" ref={textBox}>
+    <div className={LSKeyState ? "textBox active" : "textBox"} ref={wrapBox}>
       <div id="box-cols">
         <div
           id="bx-cl-left"
-          onClick={() => localStorage.setItem("active", "false")}
+          onClick={() => localStorage.setItem("showTextBox", "false")}
         >
           <i className="bx bx-arrow-back"></i>
         </div>
@@ -57,11 +99,25 @@ export default function textBox() {
         </div>
       </div>
       <div className="hashtag-text-component">
-        <textarea name="" id="" ref={textarea} cols={30} rows={10}></textarea>
+        <textarea
+          name=""
+          id=""
+          ref={textAreaInputElement}
+          cols={30}
+          rows={10}
+          className={detectFormError ? "active" : undefined}
+        ></textarea>
         <div className={detectFormError ? "error-component" : undefined}>
           <span id="error" ref={spanElement}></span>
         </div>
       </div>
     </div>
   );
+}
+
+export let VariableComponent = false;
+export function Click() {
+  VariableComponent = true;
+  localStorage.setItem("showTextBox", "true");
+  console.log(VariableComponent);
 }

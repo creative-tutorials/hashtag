@@ -1,9 +1,12 @@
 import React from "react";
+import { Click } from "./textBox";
+import { VariableComponent } from "./textBox";
 import { Item4 } from "../container/Item4";
 import { Item3 } from "../container/Item3";
 import { Item1 } from "../container/Item1";
 import { Item2 } from "../container/Item2";
 export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
+  VariableComponent;
   return (
     <div className="col-2">
       <div className="col-2-header">
@@ -24,7 +27,7 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
             type="text"
             placeholder="Write It, We Make it Happen"
             ref={input}
-            onClick={() => localStorage.setItem("active", "true")}
+            onClick={Click}
           />
         </div>
         <div className="ipt-right-off-corner">
