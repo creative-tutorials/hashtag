@@ -39,6 +39,18 @@ textarea {
   outline: none;
   border-radius: 5px;
 }
+textarea.active {
+  border-color: rgb(227, 48, 48);
+  animation: error 0.3s ease;
+}
+@keyframes error {
+  50% {
+    transform: translateX(-8px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 .error-component {
   width: 100%;
   padding: 10px;
