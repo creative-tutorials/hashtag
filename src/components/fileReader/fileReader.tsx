@@ -1,16 +1,16 @@
 import { blobConverter } from "../blobConverter/blobConvert";
-export function ReadFileFromSystem(event:any) {
-  console.log(event.target.files[0]);
-  const file = event.target.files[0];
-  const fileName = event.target.files[0].name;
-  const fileType = event.target.files[0].type;
+// import { DownloadFileLink } from "../test/test";
+export async function ReadFileFromSystem(event: any) {
+  const FileObjectFromFileAPI = event.target.files[0];
+  const getFileNameFromFileAPI = event.target.files[0].name;
+  const getFileTypeFromFileAPI = event.target.files[0].type;
+  const getFileSizeFromFileAPI = event.target.files[0].size;
   var reader = new FileReader();
-  reader.readAsDataURL(file);
+  reader.onload = async function () {
+    const Base64DataURLResult = reader.result;
 
-  reader.onload = async function (e:any) {
-    const dataURLResult = e.target.result;
-    // console.log(a);
-
-    blobConverter(dataURLResult, fileType, fileName);
+    blobConverter(Base64DataURLResult, getFileNameFromFileAPI, getFileTypeFromFileAPI, getFileSizeFromFileAPI, FileObjectFromFileAPI);
+    // DownloadFileLink(file);
   };
+  reader.readAsDataURL(FileObjectFromFileAPI);
 }
