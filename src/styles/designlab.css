@@ -38,6 +38,7 @@ textarea {
   padding: 20px;
   outline: none;
   border-radius: 5px;
+  font-size: 20px;
 }
 textarea.active {
   border-color: rgb(227, 48, 48);
