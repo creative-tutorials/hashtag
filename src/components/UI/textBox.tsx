@@ -45,9 +45,9 @@ export default function textBox() {
           },
           body: JSON.stringify({
             post: field,
-            username: 'Session.username',
-            email: 'Session.email',
-            password: 'Session.password',
+            username: parsedData.username,
+            email: parsedData.email,
+            password: parsedData.password,
           }),
         });
   
@@ -71,7 +71,12 @@ export default function textBox() {
         console.error(err);
       }
     } else {
-      alert("Unexpected Response: Looks like we couldn't find your session details, try creating an account to fix this issue")
+      const error = "Unexpected Error: Looks like we couldn't find your session details, try creating an account to fix this issue"
+      errorMessage.current = error;
+      setdetectFormError(true);
+      spanElement.current.textContent = memoValue.current;
+      /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
+      localStorage.setItem("showTextBox", "false");
     }
   }
   const getshowTextBox = localStorage.getItem("showTextBox");
