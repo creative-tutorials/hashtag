@@ -1,16 +1,8 @@
-import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
+import useObjectURL from "use-object-url";
 
-export default class extends React.Component {
-  render() {
-    return (
-      <h1>h</h1>
-    );
-  }
-}
+export const DownloadFileLink = ({ file }: any) => {
+  const fileURL = useObjectURL(file);
+  console.log(fileURL);
+
+  return <></>;
+};
