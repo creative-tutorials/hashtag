@@ -100,7 +100,7 @@ function SignupPageComponent() {
           </div>
           <div id={design.inputbox}>
             <span>Password</span>
-            <input type="password" placeholder="" ref={password_field} />
+            <input type="password" placeholder="*********" ref={password_field} />
             <i
               className={detectPassword ? "bx bx-show" : "bx bx-hide"}
               onClick={getPasswordField}
