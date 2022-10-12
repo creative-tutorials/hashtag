@@ -11,14 +11,13 @@ import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
 const HashtagHomePage = () => {
   const dataFetchedRef = useRef(false);
   const _box_item: any = useRef();
-  
+
   useEffect(() => {
     if (dataFetchedRef.current) return;
-      dataFetchedRef.current = true;
-      LoadedPage();
-      Carousel();
-  },[]);
-
+    dataFetchedRef.current = true;
+    LoadedPage();
+    Carousel();
+  }, []);
 
   const quotes = HashTagQuotes();
   /**
@@ -34,11 +33,21 @@ const HashtagHomePage = () => {
     if (dataFetchedRef) {
       let inputPlaceholder = input.current.placeholder;
       /**
-       * Sets the placeholder text of the input element to a random quote from the quote array.       
-       * @returns None       
+       * Sets the placeholder text of the input element to a random quote from the quote array.
+       * @returns None
        */
       input.current.placeholder = randomQuote;
-    } 
+
+    }
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      console.info("This page is reloaded");
+      window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+      }
+      window.open("http://localhost:5173/", "_blank");
+    } else {
+      console.info("This page is not reloaded");
+    }
   };
   const ReqFile = (event: any) => {
     ReadFileFromSystem(event);
@@ -48,16 +57,16 @@ const HashtagHomePage = () => {
     let _bx = _box_item.current;
     let count = 0;
     /**
-     * Scrolls the browser window to the left.           
-     * @returns None           
+     * Scrolls the browser window to the left.
+     * @returns None
      */
     _bx.scrollLeft = 0;
     const carouselInterval = setInterval(() => {
       count += 187;
       /**
-       * Scrolls the browser window to the given count.           
-       * @param {number} count - the number of pixels to scroll the window to.           
-       * @returns None           
+       * Scrolls the browser window to the given count.
+       * @param {number} count - the number of pixels to scroll the window to.
+       * @returns None
        */
       _bx.scrollLeft = count;
       console.log(count);
