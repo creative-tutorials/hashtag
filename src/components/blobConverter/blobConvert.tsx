@@ -16,12 +16,9 @@ export function blobConverter(
 
   const SendDataToAPI = async () => {
     if (Session) {
-      console.log(getFileTypeFromFileAPI);
-      console.log(Base64DataURLResult);
       try {
         const isBlob = new Blob([FileObjectFromFileAPI], { type: "image/jpg" });
-        var generateBlobURLFromFileObjectAPI = URL.createObjectURL(isBlob);
-        console.log(generateBlobURLFromFileObjectAPI);
+        const generateBlobURLFromFileObjectAPI = URL.createObjectURL(isBlob);
         const response = await fetch("http://localhost:5301/upload", {
           method: "POST",
           headers: {
