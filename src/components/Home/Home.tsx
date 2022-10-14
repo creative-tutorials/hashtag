@@ -1,6 +1,5 @@
 import { Col2Tabs } from "../UI/Col2Tabs";
 import { useRef, useMemo, useState, useEffect } from "react";
-import InputPopUp from "../UI/textBox";
 import { ReadFileFromSystem } from "../fileReader/fileReader";
 import { HashTagQuotes } from "../fun/quotes";
 import { Col1Tabs } from "../UI/col1Tabs";
@@ -92,7 +91,6 @@ const HashtagHomePage = () => {
           _box_item={_box_item}
         />
       </div>
-      <InputPopUp />
     </>
   );
 };
