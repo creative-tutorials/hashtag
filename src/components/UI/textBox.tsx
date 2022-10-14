@@ -1,13 +1,12 @@
 import "../../styles/designlab.css";
 
-import { useRef, useMemo, useState, useEffect } from "react";
-export default function textBox() {
+import { useRef, useMemo, useState } from "react";
+export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:any) {
   let errorMessage = useRef("");
   /**
    * A hook that checks if the localStorage key is set.
    * @returns A boolean that is true if the key is set.
    */
-  const [LSKeyState, setcheckLSKeyState] = useState(false);
   const textAreaInputElement: any = useRef();
   const wrapBox: any = useRef();
   let limitRendering: any = useRef(0);
@@ -15,13 +14,8 @@ export default function textBox() {
   const memoValue = useMemo(() => errorMessage, [errorMessage]);
   const [detectFormError, setdetectFormError] = useState(false);
 
-  useEffect(() => {
-    limitRendering.current++;
-    if (limitRendering.current > 1) return;
-    else CheckIfAllValueIsCorrect();
-  });
-
   const HashButton = () => {
+    
     const text_box = textAreaInputElement.current;
     if (!text_box.value) {
       errorMessage.current =
@@ -47,6 +41,8 @@ export default function textBox() {
             post: field,
             username: parsedData.username,
             email: parsedData.email,
+            status: 'posting...',
+            created: 'waiting...',
             password: parsedData.password,
           }),
         });
@@ -64,8 +60,9 @@ export default function textBox() {
           errorMessage.current = result.error;
           setdetectFormError(true);
           spanElement.current.textContent = memoValue.current;
-          /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
-          localStorage.setItem("showTextBox", "false");
+          setTimeout(() => {
+            setcheckLSKeyState(false)
+          }, 10000);
         }
       } catch (err) {
         console.error(err);
@@ -75,31 +72,17 @@ export default function textBox() {
       errorMessage.current = error;
       setdetectFormError(true);
       spanElement.current.textContent = memoValue.current;
-      /* Setting the value of the key showTextBox to false. - thereby removing the active class from the "textBox" class */
-      localStorage.setItem("showTextBox", "false");
+      setTimeout(() => {
+        setcheckLSKeyState(false)
+      }, 10000);
     }
   }
-  const getshowTextBox = localStorage.getItem("showTextBox");
-  /**
-   * Checks if the value of the showTextBox key in local storage is correct.
-   * @returns None
-   */
-  const CheckIfAllValueIsCorrect = () => {
-    if (getshowTextBox === "true") {
-      console.log("Show text box");
-      setcheckLSKeyState(true);
-    } else if (getshowTextBox === "false") {
-      setcheckLSKeyState(false);
-      console.log("Hide text box");
-    }
-    console.log(LSKeyState);
-  };
   return (
     <div className={LSKeyState ? "textBox active" : "textBox"} ref={wrapBox}>
       <div id="box-cols">
         <div
           id="bx-cl-left"
-          onClick={() => localStorage.setItem("showTextBox", "false")}
+          onClick={() => setcheckLSKeyState(false)}
         >
           <i className="bx bx-arrow-back"></i>
         </div>
@@ -122,11 +105,4 @@ export default function textBox() {
       </div>
     </div>
   );
-}
-
-export let VariableComponent = false;
-export function Click() {
-  VariableComponent = true;
-  localStorage.setItem("showTextBox", "true");
-  console.log(VariableComponent);
 }

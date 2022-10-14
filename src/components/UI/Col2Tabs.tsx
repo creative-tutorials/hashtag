@@ -1,15 +1,16 @@
 import React from "react";
-import { Click } from "./textBox";
-import { VariableComponent } from "./textBox";
 import { HashPostComponent } from "../posts/posts";
+import { InputPopUp } from "../UI/textBox";
 import { Item4 } from "../container/Item4";
 import { Item3 } from "../container/Item3";
 import { Item1 } from "../container/Item1";
 import { Item2 } from "../container/Item2";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
-  VariableComponent;
-  
+  const [LSKeyState, setcheckLSKeyState] = useState(false);
+  const FireComponent = () => {
+    setcheckLSKeyState(true);
+  };
   return (
     <div className="col-2">
       <div className="col-2-header">
@@ -30,7 +31,7 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
             type="text"
             placeholder="Write It, We Make it Happen"
             ref={input}
-            onClick={Click}
+            onClick={FireComponent}
           />
         </div>
         <div className="ipt-right-off-corner">
@@ -59,6 +60,11 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
         </div>
       </div>
       <HashPostComponent />
+      <InputPopUp
+        componentfunction={FireComponent}
+        LSKeyState={LSKeyState}
+        setcheckLSKeyState={setcheckLSKeyState}
+      />
     </div>
   );
 }
