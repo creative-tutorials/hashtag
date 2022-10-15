@@ -20,7 +20,7 @@
     <br> 
 </p>
 
-<video src="demo.webm" autoplay="true" playsinline style="pointer-events: none;">
+<video src="demo.webm" autoplay="true" playsinline style="pointer-events: none;"> </video>
 
 ## 📝 Table of Contents
 
