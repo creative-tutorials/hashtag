@@ -20,7 +20,7 @@
     <br> 
 </p>
 
-![hahstag_demo](demo.webm)
+<video src="demo.webm" autoplay="true" playsinline style="pointer-events: none;">
 
 ## 📝 Table of Contents
 
