@@ -20,6 +20,8 @@
     <br> 
 </p>
 
+![hahstag_demo](demo.webm)
+
 ## 📝 Table of Contents
 
 - [About](#about)
@@ -93,4 +95,8 @@ See also the list of [contributors](https://github.com/creative-tutorials/hashta
 
 <!-- - Hat tip to anyone whose code was used -->
 - Thanks to [@Twitter](https://twitter.com/) for the idea and inspiration
+
+## 🛡 License
+
+Hashtag is licensed under the MIT License - Check the [LICENSE](LICENSE) file for details
 <!-- - References -->
