@@ -156,7 +156,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send your our app API_KEY. `Note that your request will be denied if you aren't trusted or violates terms of useage in the app. please also take not that to become an admin you mist be active on the app for 2months when the app releases before granting access to such application` 
+3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send your our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take not that to become an admin you must be active on the app for **2months** when the app releases before granting access to such application` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
