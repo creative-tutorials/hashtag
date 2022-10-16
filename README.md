@@ -1,106 +1,278 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="public/hashtag_logo.png"></a>
-</p>
+<a name="readme-top"></a>
 
-<h3 align="center">Hashtag</h3>
+![GitHub contributors](https://img.shields.io/github/contributors/creative-tutorials/hashtag?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/creative-tutorials/hashtag?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/creative-tutorials/hashtag?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/creative-tutorials/hashtag?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/creative-tutorials/hashtag?color=blue&style=for-the-badge)
+![Twitter Follow](https://img.shields.io/twitter/follow/idealQik?color=1B9C9A&style=for-the-badge)
 
+
+
+<!-- PROJECT LOGO -->
+<br />
 <div align="center">
+  <a href="https://github.com/creative-tutorials/hashtag">
+    <img src="public/icon.png" alt="Logo" width="80" height="80">
+  </a>
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/creative-tutorials/hashtag)](https://github.com/creative-tutorials/hashtag/issues)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/creative-tutorials/hashtag)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+  <h3 align="center">Hashtag</h3>
 
+  <p align="center">
+    An open-source alternative to twitter
+    <br />
+    <a href="#readme"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/creative-tutorials/hashtag">View Demo(soon)</a>
+    ·
+    <a href="https://github.com/creative-tutorials/hashtag/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/creative-tutorials/hashtag/issues">Request Feature</a>
+  </p>
 </div>
 
----
-
-<p align="center"> The alternative to Twitter
-    <br> 
-</p>
-
-<div align="center">
-
-![videoDemo](demo.gif)
-</div>
 
 
-## 📝 Table of Contents
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#😎about-hashtag">About The Project</a>
+      <ul>
+        <li><a href="#⚙built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#📣getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#🛠prerequisites">Prerequisites</a></li>
+        <li><a href="#🛠installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#🔭usage">Usage</a></li>
+    <li><a href="#🧪features">Features</a></li>
+    <li><a href="#👨‍👩‍👧‍👦contributing">Contributing</a></li>
+    <li><a href="#🛡license">License</a></li>
+    <li><a href="#📩contact">Contact</a></li>
+    <li><a href="#🤝acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [Contributing](/blob/master/CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
 
-Hashtag is a social media platform that provides the aim for users to connect with each other by using the details you provide to us. This helps you build your presence on the platform.
+<!-- ABOUT THE PROJECT -->
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 😎About Hashtag
 
-Hahstag is free and open-source to memebers of and within the GitHub community.
+![hashtag-demo-video](demo.gif)
 
-### Installing
+Hashtag is a simple social networking platform that allows you to connect to different people around different organizations and locations. Hashtag has an aim of disculding bad words, bad posts, and any form of abusive behavior that violates our Policies.
 
-If would like to insall hahstag on your local machine and work on it you can simply follow the instructions
+Hashtag was built as an alternative to the traditional social networking platform that allows you to connect to different people around different organizations and locations. But with hashtag we can gurantee that your privacy and your feelings towards social networking is our responsibility. We are trying to make this platform very safe and easy to use. 
 
-### Step1
+We at [rivalia_inc](https://twitter.com/rivalia_inc) owners of Hashtag and other app/platforms to come. We care so much about you and are willing to make changes to our app if you notice anything you don't like.
 
-Clone the repo
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```bash
-git clone <repo url>
-```
 
-### Step2
 
-Next install the dependencies
+### ⚙Built With
 
-```bash
-npm install
-```
+Hashtag was built with the following languages/frameworks:
 
-`or`
+<table>
+<tr>
+<th>
 
-```bash
-yarn install
-```
+<a href="https://reactjs.org/">
 
-## 🎈 Usage <a name="usage"></a>
+<img src="https://shields.io/badge/React-2A3143?logo=react&style=for-the-badge" />
 
-Hashtag is currently in beta but if you want to use it in development, you can install it manually
+</th>
 
-To use **Hashtag** you can start by making a post, send something nice, and then your post should be available for others to see.
+<th>
 
-```md
-- Please note that all features will be available soon - this is just a development feature, and still on beta release
-```
+<a href="https://expressjs.com/">
 
-## ⛏️ Built Using <a name = "built_using"></a>
+<img src="https://shields.io/badge/Express-2A3143?logo=express&style=for-the-badge" />
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [ReactJS](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-- [Firebase](https://firebase.google.com/) - A Backend-as-a-service tool
+</a>
+</th>
 
-## ✍️ Authors <a name = "authors"></a>
+<th>
 
-- [@Treasure](https://github.com/creative-tutorials) - Idea & Initial work
-- [@NiiVx](https://github.com/NiiVx) - An awesome Contributor
+<a href="https://nodejs.org/">
 
-See also the list of [contributors](https://github.com/creative-tutorials/hashtag/contributors) who participated in this project.
+<img src="https://shields.io/badge/Nodejs-2A3143?logo=node.js&style=for-the-badge" />
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+</a>
+</th>
 
-<!-- - Hat tip to anyone whose code was used -->
-- Thanks to [@Twitter](https://twitter.com/) for the idea and inspiration
+<th>
 
-## 🛡 License
+<a href="https://firebase.google.com/">
 
-Hashtag is licensed under the MIT License - Check the [LICENSE](LICENSE) file for details
-<!-- - References -->
+<img src="https://shields.io/badge/Firebase-2A3143?logo=firebase&style=for-the-badge" />
+
+</a>
+</th>
+
+</tr>
+</table>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## 📣Getting Started
+
+Here is an installation guide on how to install the project
+
+### 🛠Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install
+  ```
+
+* yarn
+  ```sh
+  yarn install
+  ```
+
+### 🛠Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/creative-tutorials/hashtag.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send your our app API_KEY. `Note that your request will be denied if you aren't trusted or violates terms of useage in the app. please also take not that to become an admin you mist be active on the app for 2months when the app releases before granting access to such application` 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## 🔭Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## 🧪Features
+
+- [ ] Multiple theme
+- [x] Send a Post
+- [ ] Support Image Uploading
+- [ ] Multiple Language Support
+
+See the [open issues](https://github.com/creative-tutorials/hashtag/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## 👨‍👩‍👧‍👦Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## 🛡License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## 📩Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## 🤝Acknowledgments
+
+Thanks to our amazing contributors
+
+`coming soon`
+
+<!-- * [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search) -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[JQuery-url]: https://jquery.com 
