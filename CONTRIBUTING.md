@@ -2,7 +2,7 @@
 
 Thanks for wanting to contribute to this project. Before proceeding, please
 briefly go through the following:
-
+* [Code Of Conduct](https://github.com/creative-tutorials/hashtag/blob/master/CODE_OF_CONDUCT.md)
 * [Issues](#issues)
 * [Requirements](#requirements)
 * [Setup](#setup)
@@ -17,9 +17,6 @@ you wish to make via an [issue](https://github.com/creative-tutorials/hashtag/is
 
 - **DO NOT** create duplicate issues. Always confirm that the issue you want to
 create does not exist before proceeding
-
-- Please note we have a code of conduct, please follow it in all your
-with the project.
 
 - Always ensure that your Pull Requests are linked to their corresponding Issues.
 
