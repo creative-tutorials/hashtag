@@ -20,7 +20,10 @@
     <br> 
 </p>
 
+<p align="center">
+
 ![vudei](https://im5.ezgif.com/tmp/ezgif-5-eb12ae6803.gif)
+</p>
 
 ## 📝 Table of Contents
 
