@@ -133,20 +133,14 @@ Here is an installation guide on how to install the project
 
 ### 🛠Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install
-  ```
+Before installing this app make sure you have the following installed on your PC
 
-* yarn
-  ```sh
-  yarn install
-  ```
+- [NodeJs](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/downloads)
 
 ### 🛠Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is a guide on installing and setting up this app.
 
 1. Clone the repo
    ```sh
@@ -156,7 +150,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send your our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take not that to become an admin you must be active on the app for **2months** when the app releases before granting access to such application` 
+3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send you our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take note that to become an admin you must be active on the app for **2months** when the app releases before granting access to such application` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +159,10 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## 🔭Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+An example on how to use the software
+
+1. Signup to create an account
+2. Once account is created you can start posting anything you like for now
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
@@ -190,7 +187,7 @@ See the [open issues](https://github.com/creative-tutorials/hashtag/issues) for 
 <!-- CONTRIBUTING -->
 ## 👨‍👩‍👧‍👦Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated,** so long it doesn't go against the contribution guidelines.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -217,9 +214,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## 📩Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@idealQik](https://twitter.com/IdealQik) - info.techtimi@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
