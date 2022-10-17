@@ -1,92 +1,122 @@
-# Contributing
+# Contributing guidelines
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+Thanks for wanting to contribute to this project. Before proceeding, please
+briefly go through the following:
+* [Code Of Conduct](https://github.com/creative-tutorials/hashtag/blob/master/CODE_OF_CONDUCT.md)
+* [Issues](#issues)
+* [Requirements](#requirements)
+* [Setup](#setup)
+* [Pull Requests](#pull-requests)
+* [Remarks](#remarks)
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+## Issues
 
-## Pull Request Process
+- Before contributing to this repository, ensure that you propose the change(s)
+you wish to make via an [issue](https://github.com/creative-tutorials/hashtag/issues/new/choose)
+, email, or any other method with the maintainers.
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
-   build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
-   do not have permission to do that, you may request the second reviewer to merge it for you.
+- **DO NOT** create duplicate issues. Always confirm that the issue you want to
+create does not exist before proceeding
 
-## Code of Conduct
+- Always ensure that your Pull Requests are linked to their corresponding Issues.
 
-### Our Pledge
+## Requirements
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+- Node.js is installed.
+- Familiarity with ReactJS
+- Basic familiarity with Git and GitHub: If you are also new to these tools, visit
+[GitHub for complete beginners](https://developer.mozilla.org/en-US/docs/MDN/Contribute/GitHub_beginners)
+for a comprehensive introduction to them.
 
-### Our Standards
+## Setup
 
-Examples of behavior that contributes to creating a positive environment
-include:
+Follow these instructions to setup the project and start making changes:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+1. Fork this repo by clicking the fork button in the top-right corner.
+2. Assuming your GitHub Username is jane, run the following in your terminal:
 
-Examples of unacceptable behavior by participants include:
+```sh
+cd ~/Desktop
+git clone git@github.com:jane/hashtag.git
+```
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+3. Create a remote branch to keep your local clone as well as your fork
+in sync with the remote branch.
 
-### Our Responsibilities
+```sh
+git remote add hashtag git@github.com:creative-tutorials/hashtag.git
+```
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+You can give any name to your remote. For convenience, we are using **hashtag** here.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+4. Run `git branch` to confirm that you are on the `main` branch before proceeding.
+Then, pull the latest changes from the remote branch and create a new branch to
+begin making your **own** changes.
 
-### Scope
+```sh
+git checkout main
+git pull hashtag main
+git checkout -b name-of-your-branch
+```
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+> **Note**: Give a descriptive name to your feature branch
+(For example, **feat-featureName**, **bugFix-bugName** etc.).
+This will help us to track it in the future if the need arises.
 
-### Enforcement
+5. Run the following to start a preview of your changes:
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at [info.techtimi@gmail.com]. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+```sh
+# switch to a new terminal
+npm install   /downloads and installs the dependencies of this project./
+npm run dev
+```
+Your local preview will now be available at `http://localhost:3000/`
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+6. Make your desired changes to any of using your preferred editor.
+If your changes are huge, break them into meanignful chunks and make
+a separate PR for each chunk so that they can be reviewed in the appropriate context.
 
-### Attribution
+7. After completing your changes, **stage** and **commit** them to your branch, and then
+**push** the branch to your fork.
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
+```sh
+cd ~/hashtag
+git add .
+git commit
+git push -u origin name-of-your-branch
+```
+> **Note**: Do not commit the package files (package.json and/or package-lock.json)
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
+8. Perform a merge to sync your current branch with the upstream branch.
+
+```sh
+git fetch upstream
+git merge upstream/main
+```
+## Pull Requests
+
+- Each pull request should contain a single logical change or related set of changes
+that make sense to submit together. If a pull request becomes too large or contains
+too many unrelated changes, it becomes too difficult to review.
+
+- Link the issue you have resolved in the PR Template (e.g Closes/Fixes #392).
+
+- Your commit messages should conform to the
+[Conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/)
+guidelines.
+
+- You are responsible for resolving any conflicts that may arise in the process of creating
+a PR (merge conflicts, workflow issues etc.)
+
+- If fixing a bug:
+
+- The name of your PR should be a summary of the changes you are making.
+(For example fix: fix non-responsive navbar, feat: add prettier for code formatting)
+Provide a detailed description of the bug in the PR. Screenshots are nice.
+
+## Remarks
+
+If you feel like there's something missing in this document or it isn't comprehensive enough, then
+feel free to make a PR directly or
+[create an issue](https://github.com/creative-tutorials/hashtag/issues/new/choose)
+to improve it. Thank You.
