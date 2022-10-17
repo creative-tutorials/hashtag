@@ -66,7 +66,8 @@
 
 ## 😎About Hashtag
 
-![hashtag-demo-video](/demo.gif)
+
+![hashtag-demo-video](demo.gif)
 
 Hashtag is a simple social networking platform that allows you to connect to different people around different organizations and locations. Hashtag has an aim of disculding bad words, bad posts, and any form of abusive behavior that violates our Policies.
 
