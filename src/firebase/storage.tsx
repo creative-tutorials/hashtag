@@ -4,7 +4,7 @@ import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 /* The configuration for the Firebase App. */
 const firebaseConfig = {
-  apiKey: "AIzaSyCuB54SrF-f2LUkOiS_OnvTc3PgRHhH1Y0",
+  apiKey: "API KEY CHANGED",
   authDomain: "hashtag-app-c523b.firebaseapp.com",
   projectId: "hashtag-app-c523b",
   storageBucket: "hashtag-app-c523b.appspot.com",
