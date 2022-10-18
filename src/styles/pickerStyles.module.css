@@ -1,0 +1,68 @@
+.pickerInput {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+#input_box {
+}
+.wrapperStyle {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+input {
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 2px solid rgb(232, 232, 233);
+  outline: none;
+}
+#btn {
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+  background: rgb(133, 82, 214);
+  background: linear-gradient(
+    85deg,
+    rgba(133, 82, 214, 1) 0%,
+    rgba(111, 56, 197, 1) 100%
+  );
+  color: rgb(232, 232, 233);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 8px 11px 15px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+#btn:active {
+  color: rgb(183, 165, 212);
+  box-shadow: inset 10px 11px 25px 9px rgba(0, 0, 0, 0.1);
+}
+#alertMenu {
+  background-color: rgb(205, 255, 211);
+  position: absolute;
+  top: 20px;
+  left: -100%;
+  padding: 20px;
+  border-radius: 8px;
+  color: #3d7a44;
+  box-shadow: -10px 6px 30px -8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+#alertMenu span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#alertMenu.active {
+    left: 20px;
+}
