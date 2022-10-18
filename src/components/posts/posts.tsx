@@ -1,3 +1,4 @@
+import postui from "../../styles/postUI.module.css";
 import { useEffect, useRef } from "react";
 export function HashPostComponent() {
   let renderFunctionOnce: any = useRef(0);
@@ -26,45 +27,37 @@ export function HashPostComponent() {
         const posts = res;
         const createElement = document.createElement("div");
         document.querySelector(".post_box")?.appendChild(createElement);
-        createElement.className = "post_box_wrapper";
-        posts.forEach((element:any) => {
-          createElement.innerHTML += `<div class="wrapper_item">
-          <div class="nxd">
-          <div class="nxd-left">
+        createElement.className = postui.post_box_wrapper;
+        posts.forEach((element: any) => {
+          createElement.innerHTML += `<div class=${postui.wrapper_item}>
+          <div class=${postui.nxd}>
+          <div class=${postui.nxdleft}>
             <img src=${"/vite.svg"} alt="pfp" width=${50} height=${50} />
-            <div class="nxd-right">
-              <div class="name">
-                <span id="name">${element.username}</span>
+            <div class=${postui.nxdright}>
+              <div class=${postui.name}>
+                <span id=${postui.name}>${element.username}</span>
               </div>
-              <div class="blue-check-mark">
+              <div class=${postui.checkMark}>
                 <span></span>
               </div>
-              <div class="unique-name">
+              <div class=${postui.uniqueName}>
                 <span></span>
               </div>
             </div>
           </div>
   
-          <div class="nxd-outer-space">
-            <div class="dte">
-              <span id="date">${element.created}</span>
+          <div class=${postui.nxd_outer_space}>
+            <div class=${postui.dte}>
+              <span id=${postui.date}>${element.created}</span>
             </div>
-            <span id="drpdwn-btn">
+            <span id=${postui.drpdwn_btn}>
               <i class="bx bx-dots-vertical-rounded"></i>
             </span>
           </div>
         </div>
-        <div class="pst_body">
-          <div id="pst_content">
+        <div class=${postui.pst_body}>
+          <div id=${postui.pst_content}>
             <span>${element.post}</span>
-          </div>
-          <div id="media-content">
-            <div id="includeImg">
-              <img src=${"res[1].dataURL"} alt="imag" />
-            </div>
-            <div id="includeVid">
-              <video src="" autoPlay=${true} controls muted=${true}></video>
-            </div>
           </div>
         </div>
           </div>`;
