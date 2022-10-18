@@ -177,6 +177,8 @@ An example on how to use the software
 - [x] Send a Post
 - [ ] Support Image Uploading
 - [ ] Multiple Language Support
+- [ ] Chat Rooms
+- [x] End-User Encryption Certificates
 
 See the [open issues](https://github.com/creative-tutorials/hashtag/issues) for a full list of proposed features (and known issues).
 
@@ -214,7 +216,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## 📩Contact
 
-Your Name - [@idealQik](https://twitter.com/IdealQik) - info.techtimi@gmail.com
+My Twitter handles - [@idealQik](https://twitter.com/IdealQik) - info.techtimi@gmail.com
 
 Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
@@ -227,7 +229,23 @@ Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 Thanks to our amazing contributors
 
-`coming soon`
+<table>
+<tr>
+<th>
+
+![image](https://user-images.githubusercontent.com/68476321/196456230-d40721c0-b68a-4ff6-ad3c-57ecba5593c0.png)
+
+### [SlimCodes](https://github.com/slim-codes)
+</th>
+<th>
+
+![image](https://avatars.githubusercontent.com/u/18625617?s=64&v=4)
+
+### [NiiVx](https://github.com/NiiVx)
+
+</th>
+</tr>
+</table>
 
 <!-- * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
