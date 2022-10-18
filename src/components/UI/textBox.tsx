@@ -15,7 +15,6 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
   const [detectFormError, setdetectFormError] = useState(false);
 
   const HashButton = () => {
-    
     const text_box = textAreaInputElement.current;
     if (!text_box.value) {
       errorMessage.current =
