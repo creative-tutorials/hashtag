@@ -1,6 +1,6 @@
 import { Col2Tabs } from "../UI/Col2Tabs";
 import { useRef, useMemo, useState, useEffect } from "react";
-import { ReadFileFromSystem } from "../fileReader/fileReader";
+import { ReadFileFromSystem } from "../upload/fileReader";
 import { HashTagQuotes } from "../fun/quotes";
 import { Col1Tabs } from "../UI/col1Tabs";
 import logo from "/hashtag_logo.png";
@@ -38,17 +38,13 @@ const HashtagHomePage = () => {
       input.current.placeholder = randomQuote;
 
     }
-    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-      console.info("This page is reloaded");
-      window.onbeforeunload = function() {
-        return "Dude, are you sure you want to leave? Think of the kittens!";
-      }
-      window.open("http://localhost:5173/", "_blank");
-    } else {
-      console.info("This page is not reloaded");
-    }
   };
-  const ReqFile = (event: any) => {
+  /**
+   * FetchFileFromFileAPI is a function that takes an event as an argument and calls the
+   * ReadFileFromSystem function with the event as an argument.
+   * @param {any} event - any - The event object that is passed to the function.
+   */
+  const FetchFileFromFileAPI = (event: any) => {
     ReadFileFromSystem(event);
   };
   const Carousel = () => {
@@ -87,7 +83,7 @@ const HashtagHomePage = () => {
         <Col2Tabs
           portrait={portrait}
           input={input}
-          ReqFile={ReqFile}
+          FetchFileFromFileAPI={FetchFileFromFileAPI}
           _box_item={_box_item}
         />
       </div>
