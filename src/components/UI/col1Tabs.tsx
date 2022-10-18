@@ -1,5 +1,11 @@
 import React from "react";
 export function Col1Tabs({}) {
+  const OpenTextBox = () => {
+    const textbox: any =
+      document.querySelector("#input"); /* using JavaScript-Default syntax */
+    /* Calling the click event on the textbox. */
+    textbox.click();
+  };
   return (
     <div className="col-1-tabs">
       <div className="col-1-tab-em">
@@ -19,9 +25,9 @@ export function Col1Tabs({}) {
           <i className="bx bx-log-out bx-rotate-180"></i>
           <span id="span">Logout</span>
         </div>
-        <div className="tab-em" data-target="Party">
-          <i className="bx bxs-party"></i>
-          <span id="span">Party</span>
+        <div className="tab-em" data-target="Rooms">
+          <i className="bx bxs-microphone"></i>
+          <span id="span">Rooms</span>
         </div>
         <div className="tab-em" data-target="Trending">
           <i className="bx bxs-hot"></i>
@@ -29,7 +35,7 @@ export function Col1Tabs({}) {
         </div>
       </div>
       <div className="col-1-tab-send-button">
-        <button>Hash</button>
+        <button onClick={OpenTextBox}>Hash</button>
       </div>
     </div>
   );
