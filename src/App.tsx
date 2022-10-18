@@ -4,6 +4,7 @@ import "./App.css";
 import HashtagHomePage from "./components/Home/Home";
 import LoginPageComponent from "./auth/Login";
 import SignupPageComponent from "./auth/Signup";
+import UsernamePicker from "./auth/usernamePicker";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<HashtagHomePage />} />
         <Route path="/login" element={<LoginPageComponent />} />
         <Route path="/signup" element={<SignupPageComponent />} />
+        <Route path="/generateUsername" element={<UsernamePicker />} />
       </Routes>
     </BrowserRouter>
     
