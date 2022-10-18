@@ -1,12 +1,13 @@
-import React from "react";
+import "../../styles/friends_UI.css";
 import { HashPostComponent } from "../posts/posts";
+import { ImageComponent } from "../posts/imagepost";
 import { InputPopUp } from "../UI/textBox";
 import { Item4 } from "../container/Item4";
 import { Item3 } from "../container/Item3";
 import { Item1 } from "../container/Item1";
 import { Item2 } from "../container/Item2";
-import { useEffect, useRef, useState } from "react";
-export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
+import { useState } from "react";
+export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: any) {
   const [LSKeyState, setcheckLSKeyState] = useState(false);
   const FireComponent = () => {
     setcheckLSKeyState(true);
@@ -31,6 +32,7 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
             type="text"
             placeholder="Write It, We Make it Happen"
             ref={input}
+            id="input"
             onClick={FireComponent}
           />
         </div>
@@ -39,7 +41,7 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
             type="file"
             id="file_upload"
             accept=".png,.jpg,.jpeg,.gif,,.jfif,.mp4"
-            onChange={ReqFile}
+            onChange={FetchFileFromFileAPI}
             hidden
           />
           <label htmlFor="file_upload">
@@ -53,13 +55,15 @@ export function Col2Tabs({ portrait, input, ReqFile, _box_item }: any) {
         <h4>Follow people</h4>
         {/* coming soon- with AI recommedation system */}
         <div id="_bx_item" ref={_box_item}>
-          <Item2 portrait={portrait} />
+          <h3>No firends to show now.</h3>
+          {/* <Item2 portrait={portrait} />
           <Item3 portrait={portrait} />
           <Item1 portrait={portrait} />
-          <Item4 portrait={portrait} />
+          <Item4 portrait={portrait} /> */}
         </div>
       </div>
       <HashPostComponent />
+      <ImageComponent />
       <InputPopUp
         componentfunction={FireComponent}
         LSKeyState={LSKeyState}
