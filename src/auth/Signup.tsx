@@ -8,12 +8,10 @@ function SignupPageComponent() {
   const email_field: any = useRef();
   const password_field: any = useRef();
   const getAgeField: any = useRef();
-  const email_error: any = useRef();
-  const pswrd_error: any = useRef();
-  const age_error: any = useRef();
+  const formError: any = useRef();
   const [detectPassword, setdetectPassword] = useState(true);
   const use_memo = useMemo(() => message, [message]);
-  const getPasswordField = () => {
+  const showandHidePassword = () => {
     const d_password = password_field.current;
     // console.log("getPasswordField");
     if (d_password.type === "password") {
@@ -47,18 +45,17 @@ function SignupPageComponent() {
 
         if (response.ok) {
           const result = await response.json();
-          message.value = "";
-          email_error.current.textContent = use_memo.value;
-          pswrd_error.current.textContent = use_memo.value;
-          age_error.current.textContent = use_memo.value;
+          message.value = "Login Success";
+          formError.current.textContent = use_memo.value;
           console.log(result);
-          localStorage.setItem('session', JSON.stringify(result));
+          localStorage.setItem("session", JSON.stringify(result));
+          setTimeout(() => {
+            window.location.pathname = "/generateUsername";
+          }, 2000);
         } else {
           const result = await response.json();
           message.value = result.error;
-          email_error.current.textContent = use_memo.value;
-          pswrd_error.current.textContent = use_memo.value;
-          age_error.current.textContent = use_memo.value;
+          formError.current.textContent = use_memo.value;
         }
       } catch (err) {
         console.error(err);
@@ -80,9 +77,7 @@ function SignupPageComponent() {
     } else {
       CheckRegex();
     }
-    email_error.current.textContent = use_memo.value;
-    pswrd_error.current.textContent = use_memo.value;
-    age_error.current.textContent = use_memo.value;
+    formError.current.textContent = use_memo.value;
   };
   return (
     <div id={design.wrap}>
@@ -96,21 +91,23 @@ function SignupPageComponent() {
               placeholder="mymail@gmail.com"
               ref={email_field}
             />
-            <p id={design.form_error} ref={email_error}></p>
+            <p id={design.form_error} ref={formError}></p>
           </div>
           <div id={design.inputbox}>
             <span>Password</span>
-            <input type="password" placeholder="*********" ref={password_field} />
+            <input
+              type="password"
+              placeholder="*********"
+              ref={password_field}
+            />
             <i
               className={detectPassword ? "bx bx-show" : "bx bx-hide"}
-              onClick={getPasswordField}
+              onClick={showandHidePassword}
             ></i>
-            <p id={design.form_error} ref={pswrd_error}></p>
           </div>
           <div id={design.inputbox}>
             <span>Age</span>
             <input type="number" placeholder="" ref={getAgeField} />
-            <p id={design.form_error} ref={age_error}></p>
           </div>
           <p id={design.fgtpassword}>
             <Link to={`/forgot-password`}>Forgot password?</Link>
