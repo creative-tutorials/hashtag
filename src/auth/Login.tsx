@@ -11,9 +11,8 @@ function LoginPageComponent() {
   const pswrd_error: any = useRef();
   const [detectPassword, setdetectPassword] = useState(true);
   const use_memo = useMemo(() => message, [message]);
-  const getPasswordField = () => {
+  const showandHidePassword = () => {
     const d_password = password_field.current;
-    // console.log("getPasswordField");
     if (d_password.type === "password") {
       d_password.type = "text";
       setdetectPassword(false);
@@ -42,7 +41,8 @@ function LoginPageComponent() {
         if (response.ok) {
           const result = await response.json();
           console.log(result);
-          message.value = result.message;
+          localStorage.setItem("session", JSON.stringify(result));
+          message.value = 'Login Successfull';
           email_error.current.textContent = use_memo.value;
           pswrd_error.current.textContent = use_memo.value;
         } else {
@@ -90,10 +90,10 @@ function LoginPageComponent() {
           </div>
           <div id={login_design.inputbox}>
             <span>Password</span>
-            <input type="password" placeholder="" ref={password_field} />
+            <input type="password" placeholder="*********" ref={password_field} />
             <i
               className={detectPassword ? "bx bx-show" : "bx bx-hide"}
-              onClick={getPasswordField}
+              onClick={showandHidePassword}
             ></i>
             <p id={login_design.form_error} ref={pswrd_error}></p>
           </div>
