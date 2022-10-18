@@ -235,13 +235,13 @@ Thanks to our amazing contributors
 
 ![image](https://user-images.githubusercontent.com/68476321/196456230-d40721c0-b68a-4ff6-ad3c-57ecba5593c0.png)
 
-### [SlimCodes](https://github.com/slim-codes)
+#### [SlimCodes](https://github.com/slim-codes)
 </th>
 <th>
 
 ![image](https://avatars.githubusercontent.com/u/18625617?s=64&v=4)
 
-### [NiiVx](https://github.com/NiiVx)
+#### [NiiVx](https://github.com/NiiVx)
 
 </th>
 </tr>
