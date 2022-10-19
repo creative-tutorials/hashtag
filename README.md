@@ -119,6 +119,15 @@ Hashtag was built with the following languages/frameworks:
 </a>
 </th>
 
+<th>
+
+<a href="https://www.mongodb.com/">
+
+<img src="https://shields.io/badge/MongoDB-2A3143?logo=mongodb&style=for-the-badge" />
+
+</a>
+</th>
+
 </tr>
 </table>
 
