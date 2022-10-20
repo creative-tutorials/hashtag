@@ -237,7 +237,7 @@ Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 If you're facing issues or getting serious error message, I would suggest your fork the [backend code](https://github.com/creative-tutorials/hashtag-backend) 
 
-> **Note**: This will surely be easier for you, then you just copy the below url into the API caller. Also you'd need to have some experience in MongoDB, so you don't get more errors that is hard to tackle. You must not use an atlas account like I'm doing right now, you can use MongoDB locally running in your PC
+> **Note**: This will surely be easier for you. Next copy the below URL into the API caller. Also, you'd need to have some experience in MongoDB, so you don't get more errors that are hard to tackle. You must not use an atlas account like I'm doing right now, you can use MongoDB locally running on your PC
 
 ```sh
 localhost:5301
