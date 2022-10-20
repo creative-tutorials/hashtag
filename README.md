@@ -231,7 +231,17 @@ Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- HELPER -->
 
+## 🆘 HELPER
+
+If you're facing issues or getting serious error message, I would suggest your fork the [backend code](https://github.com/creative-tutorials/hashtag-backend) 
+
+> **Note**: This will surely be easier for you, then you just copy the below url into the API caller. Also you'd need to have some experience in MongoDB, so you don't get more errors that is hard to tackle. You must not use an atlas account like I'm doing right now, you can use MongoDB locally running in your PC
+
+```sh
+localhost:5301
+```
 
 <!-- ACKNOWLEDGMENTS -->
 ## 🤝Acknowledgments
