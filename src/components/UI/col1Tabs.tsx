@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export function Col1Tabs({}) {
   const OpenTextBox = () => {
     const textbox: any =
@@ -10,28 +11,50 @@ export function Col1Tabs({}) {
     <div className="col-1-tabs">
       <div className="col-1-tab-em">
         <div className="tab-em" data-target="Feeds">
-          <i className="bx bxs-home-smile"></i>
-          <span id="span">Feed</span>
+          <Link to={"/feeds"} style={{ color: "black", textDecoration: "none" }}>
+            <i className="bx bxs-home-smile"></i>
+            <span id="span">Feed</span>
+          </Link>
         </div>
         <div className="tab-em" data-target="Profile">
-          <i className="bx bxs-user-circle"></i>
-          <span id="span">Profile</span>
+          <Link
+            to={"/profile"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <i className="bx bxs-user-circle"></i>
+            <span id="span">Profile</span>
+          </Link>
         </div>
         <div className="tab-em" data-target="Explore">
-          <i className="bx bxs-compass"></i>
-          <span id="span">Explore</span>
+          <Link
+            to={"/explore"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <i className="bx bxs-compass"></i>
+            <span id="span">Explore</span>
+          </Link>
         </div>
         <div className="tab-em" data-target="Logout">
           <i className="bx bx-log-out bx-rotate-180"></i>
           <span id="span">Logout</span>
         </div>
         <div className="tab-em" data-target="Rooms">
-          <i className="bx bxs-microphone"></i>
-          <span id="span">Rooms</span>
+          <Link
+            to={"/rooms"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <i className="bx bxs-microphone"></i>
+            <span id="span">Rooms</span>
+          </Link>
         </div>
         <div className="tab-em" data-target="Trending">
-          <i className="bx bxs-hot"></i>
-          <span id="span">Trending</span>
+          <Link
+            to={"/trends"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <i className="bx bxs-hot"></i>
+            <span id="span">Trending</span>
+          </Link>
         </div>
       </div>
       <div className="col-1-tab-send-button">
