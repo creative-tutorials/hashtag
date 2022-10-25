@@ -1,3 +1,9 @@
+.post_box {
+  width: 100%;
+}
+#wrapper {
+  width: 100%;
+}
 .post_box_wrapper {
   height: 100%;
   max-height: 400px;

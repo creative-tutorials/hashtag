@@ -1,0 +1,178 @@
+.trendBody {
+  width: 100%;
+}
+#header {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 25px;
+  box-shadow: -10px 6px 30px -8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+#header_cols {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header_cols_right {
+  display: flex;
+  align-items: center;
+}
+#links {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#links a {
+  margin-right: 60px;
+  font-size: 2rem;
+  color: #182535;
+}
+#links:hover > #spotlight {
+  top: 50px;
+  pointer-events: auto;
+  opacity: 1;
+}
+#spotlight {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgb(36, 87, 149);
+  background: linear-gradient(
+    85deg,
+    rgba(36, 87, 149, 1) 0%,
+    rgba(75, 15, 171, 0.5889706224286589) 100%
+  );
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  pointer-events: none;
+  opacity: 0;
+  right: 0;
+  cursor: pointer;
+  margin-right: 40px;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+#spotlight:hover {
+  top: 50px;
+  pointer-events: auto;
+  opacity: 1;
+}
+/* The body of the Trends Page */
+#body_ {
+  width: 100%;
+  padding: 25px;
+  background-color: #fff;
+  margin: 10px 0 0 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#body_ #top_text h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+#reloadBtn #rldBtn {
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background-color: #e4e4e4;
+  font-weight: 600;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #182535;
+  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
+}
+#reloadBtn #rldBtn i {
+  font-size: 1.3em;
+  /* color: red; */
+}
+#reloadBtn #rldBtn:hover {
+  box-shadow: inset 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
+}
+#reloadBtn #rldBtn:hover i {
+  animation: make_it_move 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+@keyframes make_it_move {
+  100% {
+    rotate: 360deg;
+  }
+}
+#trends_container {
+  width: 100%;
+  margin-top: 15px;
+}
+#trends_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+#trend_box {
+  width: 500px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px 0 10px 10px;
+  border-radius: 10px;
+}
+#trend_image_container img {
+  width: 100%;
+  height: 100%;
+}
+#trend_text_container h3 {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+#trend_text_container p strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+}
+#count span {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+#call_to_action {
+  display: flex;
+  align-items: center;
+}
+#cta_btn {
+  width: 500px;
+  padding: 15px;
+  margin: 10px 8px 0 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: #182535;
+  background-color: #e4e4e4;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cta_btn:hover {
+  box-shadow: inset 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
+}
+#cta_btn i {
+  margin-right: 5px;
+}
+@media screen and (max-width: 866px) {
+  #trend_box {
+    width: 100%;
+  }
+  .trends_wrapper {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    overflow: auto;
+  }
+}
