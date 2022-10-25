@@ -1,7 +1,11 @@
+import { RenderedPost } from "./renderedPost";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import postui from "../../styles/postUI.module.css";
 import { useEffect, useRef } from "react";
 export function HashPostComponent() {
   let renderFunctionOnce: any = useRef(0);
+  const post_box: any = useRef();
   useEffect(() => {
     // console.log(LimitFetchingData);
     renderFunctionOnce.current++;
@@ -15,7 +19,7 @@ export function HashPostComponent() {
       const response = await fetch("http://localhost:5301/post", {
         method: "GET",
         headers: {
-          apikey: "3Gq67bFtUSDbcI3bdaulMUiVpnZTJ93B",
+          apikey: import.meta.env.VITE_API_KEY,
           "Content-Type": "application/json",
         },
       });
@@ -25,47 +29,13 @@ export function HashPostComponent() {
         const res = result;
         console.log(res);
         const posts = res;
-        const createElement = document.createElement("div");
-        document.querySelector(".post_box")?.appendChild(createElement);
-        createElement.className = postui.post_box_wrapper;
-        posts.forEach((element: any) => {
-          createElement.innerHTML += `<div class=${postui.wrapper_item}>
-          <div class=${postui.nxd}>
-          <div class=${postui.nxdleft}>
-            <img src=${"/vite.svg"} alt="pfp" width=${50} height=${50} />
-            <div class=${postui.nxdright}>
-              <div class=${postui.name}>
-                <span id=${postui.name}>${element.username}</span>
-              </div>
-              <div class=${postui.checkMark}>
-                <span></span>
-              </div>
-              <div class=${postui.uniqueName}>
-                <span></span>
-              </div>
-            </div>
-          </div>
-  
-          <div class=${postui.nxd_outer_space}>
-            <div class=${postui.dte}>
-              <span id=${postui.date}>${element.created}</span>
-            </div>
-            <span id=${postui.drpdwn_btn}>
-              <i class="bx bx-dots-vertical-rounded"></i>
-            </span>
-          </div>
-        </div>
-        <div class=${postui.pst_body}>
-          <div id=${postui.pst_content}>
-            <span>${element.post}</span>
-          </div>
-        </div>
-          </div>`;
-        });
+        const container: any = document.querySelector('.' + postui.post_box);
+        const root = ReactDOM.createRoot(container);
+        root.render(<RenderedPost post={posts} postui={postui} />);
       }
     } catch (err) {
       console.error(err);
     }
   };
-  return <div className="post_box"></div>;
+  return <div className={postui.post_box} ref={post_box}></div>;
 }

@@ -1,4 +1,7 @@
+import { RenderedImagePost } from "./renderedImagePost";
 import postui from "../../styles/postUI.module.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { useEffect, useRef } from "react";
 export const ImageComponent = () => {
   let loadMountCount: any = useRef(0);
@@ -22,7 +25,7 @@ export const ImageComponent = () => {
       const response = await fetch("http://localhost:5301/upload", {
         method: "GET",
         headers: {
-          apikey: "3Gq67bFtUSDbcI3bdaulMUiVpnZTJ93B",
+          apikey: import.meta.env.VITE_API_KEY,
           "Content-Type": "application/json",
         },
       });
@@ -31,31 +34,15 @@ export const ImageComponent = () => {
         const result = await response.json();
         console.log(result);
         const imagepostData = result;
-        const createElement = document.createElement("div");
-        document.querySelector(".post_box")?.appendChild(createElement);
-        createElement.className = postui.uploadWrapper;
-        imagepostData.forEach((data: any) => {
-          createElement.innerHTML += ` <div class=${postui.mediaContent}>
-          <div class=${postui.top}>
-            <div class=${postui.left}>
-                <img src=${"/vite.svg"} alt="pfp" width=${50} height=${50} />
-                <span>username</span>
-            </div>
-            <div class=${postui.right_col}>
-              <div id=${postui.date}>
-                <p>June 14 2016</p>
-              </div>
-            </div>
-          </div>
-          <div id=${postui.imageMediaContent}>
-            <img src=${data.dataURL} alt="Image" />
-          </div>
-        </div>`;
-        });
+        const container: any = document.getElementById(postui.wrapper);
+        const root = ReactDOM.createRoot(container);
+        root.render(
+          <RenderedImagePost imagepostData={imagepostData} postui={postui} />
+        );
       }
     } catch (err) {
       console.error(err);
     }
   };
-  return <></>
+  return <div id={postui.wrapper}></div>;
 };
