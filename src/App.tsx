@@ -6,12 +6,15 @@ import LoginPageComponent from "./auth/Login";
 import SignupPageComponent from "./auth/Signup";
 import UsernamePicker from "./auth/usernamePicker";
 import TrendsPage from "./components/trends/trendsPage";
+import ProtectedRoute from "./ProtectedRoute";
 function App() {
   return (
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HashtagHomePage />} />
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/" element={<HashtagHomePage />} />
+        </Route>  
         <Route path="/login" element={<LoginPageComponent />} />
         <Route path="/signup" element={<SignupPageComponent />} />
         <Route path="/generateUsername" element={<UsernamePicker />} />
