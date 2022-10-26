@@ -1,12 +1,17 @@
 import pickerStyles from "../styles/pickerStyles.module.css";
 import { useRef, useState } from "react";
-function UsernamePicker() {
+import React from "react";
+import ReactDOM from "react-dom/client";
+let userRef = "Loading...";
+let userFetch = false;
+export function UsernamePicker({ loadNameGeneratorComponent }: any) {
+  console.log("loaded");
   const [showError, setshowError] = useState(false);
-  const ePicker: any = useRef();
+  const usernameInputField: any = useRef();
   const pickerMenu: any = useRef();
   const Session: any = localStorage.getItem("session");
   const parsedData = JSON.parse(Session);
-  const fetchGeneratedContentFromAPI = async () => {
+  const SubmitDetailsToAPI = async () => {
     try {
       const response = await fetch("http://localhost:5301/generateUsername", {
         method: "POST",
@@ -16,23 +21,15 @@ function UsernamePicker() {
         body: JSON.stringify({
           email: parsedData.email,
           password: parsedData.password,
-          length: 10,
+          username: usernameInputField.current.value,
         }),
       });
 
       if (response.ok) {
         const result = await response.json();
         console.log(result);
-        const generatedContent = result.YOUR_GENERATED_USERNAME;
-        ePicker.current.value = generatedContent;
-        /* Copying the generated username to the clipboard. */
-        const cb = navigator.clipboard;
-        cb.writeText(generatedContent)
-          .then(() => {
-            alert("Text Copied Successfully");
-          })
-          .catch(() => setshowError(true));
-        ChangeUserName(generatedContent);
+        const retrievedData = result.YOUR_USERNAME;
+        ChangeUserName(retrievedData);
       }
       if (!response.ok) {
         const result = await response.json();
@@ -43,45 +40,50 @@ function UsernamePicker() {
       console.error(err);
     }
   };
-  async function ChangeUserName(generatedContent: any) {
+  async function ChangeUserName(retrievedData: any) {
     try {
       const response = await fetch("http://localhost:5301/edit_profile", {
         method: "PUT",
         headers: {
           apikey: import.meta.env.VITE_API_KEY,
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email: parsedData.email,
           password: parsedData.password,
-          username: generatedContent,
-          bio: `Hey I am ${generatedContent} Just Browsing :)`,
+          username: retrievedData,
+          bio: `Hey I am ${retrievedData} Just Browsing :)`,
           dob: "12/02/2005",
         }),
       });
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
+        console.log("result", result);
         alert(result.message);
+      }
+      if (!response.ok) {
+        const result = await response.json();
+        console.log(result);
+        alert(result.error);
       }
     } catch (err) {
       console.error(err);
     }
   }
-  return (
+
+  return loadNameGeneratorComponent ? (
     <div className={pickerStyles.wrapperStyle}>
       <div id={pickerStyles.input_box}>
         <div className={pickerStyles.pickerInput}>
           <input
             type="text"
-            id="ePicker"
+            id="usernameInputField"
             placeholder="Auto generated username"
-            ref={ePicker}
-            readOnly
+            ref={usernameInputField}
           />
-          <button id={pickerStyles.btn} onClick={fetchGeneratedContentFromAPI}>
-            <i className="bx bx-rotate-left"></i>
+          <button id={pickerStyles.btn} onClick={SubmitDetailsToAPI}>
+            <i className="bx bx-edit"></i>
           </button>
         </div>
       </div>
@@ -92,6 +94,5 @@ function UsernamePicker() {
         </span>
       </div>
     </div>
-  );
+  ) : null;
 }
-export default UsernamePicker;

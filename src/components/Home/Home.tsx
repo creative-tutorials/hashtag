@@ -15,7 +15,6 @@ const HashtagHomePage = () => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
     LoadedPage();
-    Carousel();
   }, []);
 
   const quotes = HashTagQuotes();
@@ -36,7 +35,6 @@ const HashtagHomePage = () => {
        * @returns None
        */
       input.current.placeholder = randomQuote;
-
     }
   };
   /**
@@ -46,30 +44,6 @@ const HashtagHomePage = () => {
    */
   const FetchFileFromFileAPI = (event: any) => {
     ReadFileFromSystem(event);
-  };
-  const Carousel = () => {
-    console.log("carousel loaded");
-    let _bx = _box_item.current;
-    let count = 0;
-    /**
-     * Scrolls the browser window to the left.
-     * @returns None
-     */
-    _bx.scrollLeft = 0;
-    const carouselInterval = setInterval(() => {
-      count += 187;
-      /**
-       * Scrolls the browser window to the given count.
-       * @param {number} count - the number of pixels to scroll the window to.
-       * @returns None
-       */
-      _bx.scrollLeft = count;
-      console.log(count);
-      if (count === 187) {
-        clearInterval(carouselInterval);
-        console.log("interval finished");
-      }
-    }, 3000);
   };
   return (
     <>

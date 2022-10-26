@@ -50,7 +50,7 @@ function SignupPageComponent() {
           console.log(result);
           localStorage.setItem("session", JSON.stringify(result));
           setTimeout(() => {
-            window.location.pathname = "/generateUsername";
+            window.location.pathname = "/profile";
           }, 2000);
         } else {
           const result = await response.json();

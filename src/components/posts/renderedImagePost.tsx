@@ -8,7 +8,7 @@ export function RenderedImagePost({ imagepostData, postui }: any) {
             <div className={postui.top}>
               <div className={postui.left}>
                 <img src={"/vite.svg"} alt="pfp" width={50} height={50} />
-                <span>username</span>
+                <span>{item.username}</span>
               </div>
               <div className={postui.right_col}>
                 <div id={postui.date}>

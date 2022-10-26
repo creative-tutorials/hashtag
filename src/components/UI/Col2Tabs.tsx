@@ -33,6 +33,8 @@ export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: a
             placeholder="Write It, We Make it Happen"
             ref={input}
             id="input"
+            readOnly
+            style={{cursor: 'pointer'}}
             onClick={FireComponent}
           />
         </div>
@@ -55,7 +57,7 @@ export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: a
         <h4>Follow people</h4>
         {/* coming soon- with AI recommedation system */}
         <div id="_bx_item" ref={_box_item}>
-          <h3>No firends to show now.</h3>
+          <h3>Working on it</h3>
           {/* <Item2 portrait={portrait} />
           <Item3 portrait={portrait} />
           <Item1 portrait={portrait} />

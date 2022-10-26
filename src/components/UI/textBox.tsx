@@ -38,7 +38,6 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
           },
           body: JSON.stringify({
             post: field,
-            username: parsedData.username,
             email: parsedData.email,
             status: 'posting...',
             created: 'waiting...',

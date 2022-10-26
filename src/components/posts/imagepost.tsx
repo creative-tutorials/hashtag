@@ -15,10 +15,9 @@ export const ImageComponent = () => {
       return;
     }
     return () => {
-      //   loadMountCount = 0;
+      
     };
   });
-  console.log(loadMountCount);
 
   const ImagePostDataFromAPI = async () => {
     try {
@@ -32,7 +31,7 @@ export const ImageComponent = () => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
+        console.log('result', result);
         const imagepostData = result;
         const container: any = document.getElementById(postui.wrapper);
         const root = ReactDOM.createRoot(container);
