@@ -159,7 +159,7 @@ _Below is a guide on installing and setting up this app.
    ```sh
    yarn install
    ```
-3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send you our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take note that to become an admin you must be active on the app for **2months** when the app releases before granting access to such application` 
+3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send you our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take note that to become an admin you must be active on the app for **2months** when the app releases before granting such permission` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,12 +182,12 @@ An example on how to use the software
 <!-- ROADMAP -->
 ## 🧪Features
 
-- [ ] Multiple theme
-- [x] Send a Post
-- [ ] Support Image Uploading
-- [ ] Multiple Language Support
-- [ ] Chat Rooms
-- [x] End-User Encryption Certificates
+- Multiple theme
+- Send a Post
+- Support Image Uploading
+- Multiple Language Support
+- Chat Rooms
+- Secured Posting & Chatting Certificates **(enabled by default)**
 
 See the [open issues](https://github.com/creative-tutorials/hashtag/issues) for a full list of proposed features (and known issues).
 
@@ -233,15 +233,12 @@ Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 <!-- HELPER -->
 
-## 🆘 HELPER
+## ⚠Report an Issue
 
-If you're facing issues or getting serious error message, I would suggest your fork the [backend code](https://github.com/creative-tutorials/hashtag-backend) 
+If you're facing issues or getting serious error message, You can fill [report the issue](https://github.com/creative-tutorials/hashtag/issues/new/choose) you're facing
 
-> **Note**: This will surely be easier for you. Next copy the below URL into the API caller. Also, you'd need to have some experience in MongoDB, so you don't get more errors that are hard to tackle. You must not use an atlas account like I'm doing right now, you can use MongoDB locally running on your PC
+> **Note**: Please use the bug report issue template to report a certain issue you have with the application, and will try all best to make sure it gets resolved
 
-```sh
-localhost:5301
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -263,6 +260,13 @@ Thanks to our amazing contributors
 ![image](https://avatars.githubusercontent.com/u/18625617?s=64&v=4)
 
 #### [NiiVx](https://github.com/NiiVx)
+
+</th>
+<th>
+
+![image](https://avatars.githubusercontent.com/u/74678752?s=64&v=4)
+
+#### [chibuh](https://github.com/chibuh)
 
 </th>
 </tr>
