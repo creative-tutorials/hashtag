@@ -4,19 +4,20 @@
   display: flex;
   /* align-items: center; */
   /* flex-wrap: wrap; */
-  padding: 0 30px;
+  /* padding: 0 30px; */
 }
 .col-1 {
   width: 100%;
+  height: 100vh;
   max-width: 300px;
   position: -webkit-sticky;
   position: sticky;
-  /* background-color: red; */
+  right: 0;
+  padding: 20px;
   top: 0;
-  height: 100%;
 }
 .col-1 .col-1-tabs .col-1-tab-em .tab-em {
-  width: 180px;
+  width: calc(100% - 40px);
   background-color: #fff;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -43,7 +44,7 @@
   margin-left: 15px;
 }
 .col-1-tab-send-button button {
-  width: 180px;
+  width: calc(100% - 40px);
   padding: 14px;
   border-radius: 8px;
   outline: none;
@@ -84,6 +85,10 @@
 .col-2-header #c19.active {
   background-color: var(--light);
   border-color: #6f38c5;
+  color: black;
+}
+.col-2-header #c19 a {
+  text-decoration: none;
   color: black;
 }
 .col-2-input_box {
