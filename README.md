@@ -72,8 +72,6 @@ Hashtag is a simple social networking platform that allows you to connect to dif
 
 Hashtag was built as an alternative to the traditional social networking platform that allows you to connect to different people around different organizations and locations. But with hashtag we can gurantee that your privacy and your feelings towards social networking is our responsibility. We are trying to make this platform very safe and easy to use. 
 
-We at [rivalia_inc](https://twitter.com/rivalia_inc) owners of Hashtag and other app/platforms to come. We care so much about you and are willing to make changes to our app if you notice anything you don't like.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -235,7 +233,7 @@ Project Link: [hashtag](https://github.com/creative-tutorials/hashtag/)
 
 ## ⚠Report an Issue
 
-If you're facing issues or getting serious error message, You can fill [report the issue](https://github.com/creative-tutorials/hashtag/issues/new/choose) you're facing
+If you're facing issues any certain issue with the app, you can kindly [report the issue](https://github.com/creative-tutorials/hashtag/issues/new/choose) you're facing
 
 > **Note**: Please use the bug report issue template to report a certain issue you have with the application, and will try all best to make sure it gets resolved
 
