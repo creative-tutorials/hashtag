@@ -19,7 +19,7 @@
   <h3 align="center">Hashtag</h3>
 
   <p align="center">
-    An open-source alternative to twitter
+    An open-source Social Media Platfrom
     <br />
     <a href="#readme"><strong>Explore the docs »</strong></a>
     <br />
