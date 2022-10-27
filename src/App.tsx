@@ -4,9 +4,9 @@ import "./App.css";
 import HashtagHomePage from "./components/Home/Home";
 import LoginPageComponent from "./auth/Login";
 import SignupPageComponent from "./auth/Signup";
-import UsernamePicker from "./auth/usernamePicker";
 import TrendsPage from "./components/trends/trendsPage";
 import ProtectedRoute from "./ProtectedRoute";
+import ProfilePage from './auth/profile';
 function App() {
   return (
     <>
@@ -17,8 +17,12 @@ function App() {
         </Route>  
         <Route path="/login" element={<LoginPageComponent />} />
         <Route path="/signup" element={<SignupPageComponent />} />
-        <Route path="/generateUsername" element={<UsernamePicker />} />
+        <Route element={<ProtectedRoute/>}>
+        <Route path="/profile" element={<ProfilePage />} />
+        </Route>  
+        <Route element={<ProtectedRoute/>}>
         <Route path="/trends" element={<TrendsPage />} />
+        </Route>  
       </Routes>
     </BrowserRouter>
     
