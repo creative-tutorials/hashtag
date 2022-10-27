@@ -1,4 +1,4 @@
-import { RenderedImagePost } from "./renderedImagePost";
+import { RenderedImagePost } from "./renderedImageElement";
 import postui from "../../styles/postUI.module.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -10,15 +10,14 @@ export const ImageComponent = () => {
     loadMountCount.current++;
     if (loadMountCount.current > 1) {
       ImagePostDataFromAPI();
-      console.log("Image Post Component Rendered");
+      console.log('%c Image Post Component Rendered.', 'color: #78D351');
     } else {
       return;
     }
     return () => {
-      //   loadMountCount = 0;
+      
     };
   });
-  console.log(loadMountCount);
 
   const ImagePostDataFromAPI = async () => {
     try {
@@ -32,7 +31,6 @@ export const ImageComponent = () => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
         const imagepostData = result;
         const container: any = document.getElementById(postui.wrapper);
         const root = ReactDOM.createRoot(container);

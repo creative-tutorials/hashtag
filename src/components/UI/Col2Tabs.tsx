@@ -1,13 +1,15 @@
 import "../../styles/friends_UI.css";
-import { HashPostComponent } from "../posts/posts";
-import { ImageComponent } from "../posts/imagepost";
+import { HashPostComponent } from "../posts/getpost";
+import { ImageComponent } from "../posts/getImagePost";
 import { InputPopUp } from "../UI/textBox";
-import { Item4 } from "../container/Item4";
-import { Item3 } from "../container/Item3";
-import { Item1 } from "../container/Item1";
-import { Item2 } from "../container/Item2";
 import { useState } from "react";
-export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: any) {
+import { Link } from "react-router-dom";
+export function Col2Tabs({
+  portrait,
+  input,
+  FetchFileFromFileAPI,
+  _box_item,
+}: any) {
   const [LSKeyState, setcheckLSKeyState] = useState(false);
   const FireComponent = () => {
     setcheckLSKeyState(true);
@@ -16,10 +18,10 @@ export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: a
     <div className="col-2">
       <div className="col-2-header">
         <div id="c19" className="active">
-          Feed
+          <Link to={"/"}>Feed</Link>
         </div>
-        <div id="c19">People</div>
-        <div id="c19">Trending</div>
+        <div id="c19"><Link to={"/people"}>People</Link></div>
+        <div id="c19"><Link to={"/trending"}>Trending</Link></div>
       </div>
       <div className="col-2-input_box">
         <div className="ipt-left">
@@ -33,6 +35,8 @@ export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: a
             placeholder="Write It, We Make it Happen"
             ref={input}
             id="input"
+            readOnly
+            style={{ cursor: "pointer" }}
             onClick={FireComponent}
           />
         </div>
@@ -49,17 +53,6 @@ export function Col2Tabs({ portrait, input, FetchFileFromFileAPI, _box_item }: a
               <i className="bx bx-cloud-upload"></i>
             </span>
           </label>
-        </div>
-      </div>
-      <div className="friends_box">
-        <h4>Follow people</h4>
-        {/* coming soon- with AI recommedation system */}
-        <div id="_bx_item" ref={_box_item}>
-          <h3>No firends to show now.</h3>
-          {/* <Item2 portrait={portrait} />
-          <Item3 portrait={portrait} />
-          <Item1 portrait={portrait} />
-          <Item4 portrait={portrait} /> */}
         </div>
       </div>
       <HashPostComponent />

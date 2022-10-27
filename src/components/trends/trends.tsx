@@ -11,7 +11,6 @@ export function TrendsList({ data, props, style, dataRef }: any) {
 
     return () => {
       checkRenderedLimit = 0;
-      console.log("removed");
     };
   }, []);
   const RecoverTrendsFromPropsData = async () => {};

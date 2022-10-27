@@ -38,7 +38,6 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
           },
           body: JSON.stringify({
             post: field,
-            username: parsedData.username,
             email: parsedData.email,
             status: 'posting...',
             created: 'waiting...',
@@ -86,7 +85,7 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
           <i className="bx bx-arrow-back"></i>
         </div>
         <div id="bx-cl-right">
-          <button onClick={HashButton}>Hash</button>
+          <button onClick={HashButton}>Post</button>
         </div>
       </div>
       <div className="hashtag-text-component">

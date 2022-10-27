@@ -11,7 +11,7 @@ export function Col1Tabs({}) {
     <div className="col-1-tabs">
       <div className="col-1-tab-em">
         <div className="tab-em" data-target="Feeds">
-          <Link to={"/feeds"} style={{ color: "black", textDecoration: "none" }}>
+          <Link to={"/"} style={{ color: "black", textDecoration: "none" }}>
             <i className="bx bxs-home-smile"></i>
             <span id="span">Feed</span>
           </Link>
@@ -43,8 +43,8 @@ export function Col1Tabs({}) {
             to={"/rooms"}
             style={{ color: "black", textDecoration: "none" }}
           >
-            <i className="bx bxs-microphone"></i>
-            <span id="span">Rooms</span>
+            <i className='bx bx-coffee'></i>
+            <span id="span">Coffe Chat</span>
           </Link>
         </div>
         <div className="tab-em" data-target="Trending">
@@ -58,7 +58,7 @@ export function Col1Tabs({}) {
         </div>
       </div>
       <div className="col-1-tab-send-button">
-        <button onClick={OpenTextBox}>Hash</button>
+        <button onClick={OpenTextBox}>Post To Feed</button>
       </div>
     </div>
   );

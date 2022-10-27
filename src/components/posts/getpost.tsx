@@ -1,4 +1,4 @@
-import { RenderedPost } from "./renderedPost";
+import { RenderedPost } from "./renderedPostElement";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import postui from "../../styles/postUI.module.css";
@@ -14,7 +14,6 @@ export function HashPostComponent() {
   }, []);
 
   const LoadAllPostFromAPI = async () => {
-    console.log("load");
     try {
       const response = await fetch("http://localhost:5301/post", {
         method: "GET",
@@ -27,7 +26,6 @@ export function HashPostComponent() {
       if (response.ok) {
         const result = await response.json();
         const res = result;
-        console.log(res);
         const posts = res;
         const container: any = document.querySelector('.' + postui.post_box);
         const root = ReactDOM.createRoot(container);
