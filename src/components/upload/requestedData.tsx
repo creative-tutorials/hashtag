@@ -1,4 +1,3 @@
-import { FirebaseStorageFunction } from "../../firebase/storage";
 export function blobConverter(
   Base64DataURLResult: any,
   getFileNameFromFileAPI: any,
@@ -15,7 +14,6 @@ export function blobConverter(
   const parsedData = JSON.parse(Session);
 
   const SendDataToAPI = async () => {
-    console.log(getFileSizeFromFileAPI);
     if (Session) {
       try {
         const response = await fetch("http://localhost:5301/upload", {
@@ -41,10 +39,6 @@ export function blobConverter(
           const result = await response.json();
           console.log(result);
           alert(result.message);
-          FirebaseStorageFunction(
-            FileObjectFromFileAPI,
-            getFileNameFromFileAPI
-          );
         }
         if (!response.ok) {
           const result = await response.json();

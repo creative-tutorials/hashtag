@@ -1,12 +1,12 @@
 import reactLogo from "./assets/react.svg";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import HashtagHomePage from "./components/Home/Home";
-import LoginPageComponent from "./auth/Login";
-import SignupPageComponent from "./auth/Signup";
-import TrendsPage from "./components/trends/trendsPage";
+import HashtagHomePage from "./routes/Home";
+import LoginPageComponent from "./routes/Login";
+import SignupPageComponent from "./routes/Signup";
+import TrendsPage from "./routes/trendHomePage";
 import ProtectedRoute from "./ProtectedRoute";
-import ProfilePage from './auth/profile';
+import ProfilePage from './routes/profile';
 function App() {
   return (
     <>

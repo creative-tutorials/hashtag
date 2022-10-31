@@ -29,13 +29,11 @@ export function EditUserProfile({
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
         const retrievedData = result.YOUR_USERNAME;
         ChangeUserName(retrievedData);
       }
       if (!response.ok) {
         const result = await response.json();
-        console.log(result);
         alert(result.error);
       }
     } catch (err) {
@@ -61,14 +59,12 @@ export function EditUserProfile({
 
       if (response.ok) {
         const result = await response.json();
-        console.log("result", result);
         setloadNameGeneratorComponent(false);
         sethideIDComponent(true);
         alert(result.message);
       }
       if (!response.ok) {
         const result = await response.json();
-        console.log(result);
         alert(result.error);
       }
     } catch (err) {

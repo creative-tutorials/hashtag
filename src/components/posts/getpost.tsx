@@ -7,9 +7,7 @@ export function HashPostComponent() {
   let renderFunctionOnce: any = useRef(0);
   const post_box: any = useRef();
   useEffect(() => {
-    // console.log(LimitFetchingData);
     renderFunctionOnce.current++;
-    // console.log(LimitFetchingData);
     if (renderFunctionOnce.current > 1) LoadAllPostFromAPI();
   }, []);
 

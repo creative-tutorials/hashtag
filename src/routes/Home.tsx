@@ -1,9 +1,8 @@
-import { Col2Tabs } from "../UI/Col2Tabs";
+import { Col2Tabs } from "../components/UI/Col2Tabs";
 import { useRef, useMemo, useState, useEffect } from "react";
-import { ReadFileFromSystem } from "../upload/fileReader";
-import { HashTagQuotes } from "../fun/quotes";
-import { Col1Tabs } from "../UI/col1Tabs";
-import logo from "/hashtag_logo.png";
+import { ReadFileFromSystem } from "../components/upload/fileReader";
+import { HashTagQuotes } from "../components/fun/quotes";
+import { Col1Tabs } from "../components/UI/col1Tabs";
 import portrait from "/ab1.jpg";
 import React from "react";
 import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
@@ -33,7 +32,7 @@ const HashtagHomePage = () => {
        * Sets the placeholder text of the input element to a random quote from the quote array.
        * @returns None
        */
-      input.current.placeholder = randomQuote;
+      input.current.placeholder = lodge;
     }
   };
   /**
@@ -48,9 +47,6 @@ const HashtagHomePage = () => {
     <>
       <div className="cols">
         <div className="col-1">
-          <div className="img">
-            <img src={logo} alt="app_logo" width={100} height={100} />
-          </div>
           <Col1Tabs />
         </div>
         <Col2Tabs

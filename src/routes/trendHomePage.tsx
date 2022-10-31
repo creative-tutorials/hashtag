@@ -1,9 +1,9 @@
-import { TrendsHeader } from './TrendsHeader';
-import trends_style from "../../styles/trendsUI.module.css";
+import { TrendsHeader } from '../components/trends/TrendsHeader';
+import trends_style from "../styles/trendsUI.module.css";
 import { Link } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { TrendsList } from "./trends";
+import { DataComponent } from "../components/trends/dataComponent";
 import { useEffect, useRef } from "react";
 function TrendsPage() {
   const checkRenderedLimit = useRef(0);
@@ -30,12 +30,11 @@ function TrendsPage() {
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
         const trendsfromResult = result;
         const container: any = document.getElementById(trends_style.body_);
         const root = ReactDOM.createRoot(container);
         root.render(
-          <TrendsList
+          <DataComponent
             data={dataRef}
             dataRef={trendsfromResult}
             props={true}

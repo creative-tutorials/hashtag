@@ -12,7 +12,7 @@ export function Col1Tabs({}) {
       <div className="col-1-tab-em">
         <div className="tab-em" data-target="Feeds">
           <Link to={"/"} style={{ color: "black", textDecoration: "none" }}>
-            <i className="bx bxs-home-smile"></i>
+            <i className="bx bxs-news"></i>
             <span id="span">Feed</span>
           </Link>
         </div>
@@ -25,26 +25,28 @@ export function Col1Tabs({}) {
             <span id="span">Profile</span>
           </Link>
         </div>
-        <div className="tab-em" data-target="Explore">
+        <div className="tab-em" data-target="Members">
           <Link
-            to={"/explore"}
+            to={"/members"}
             style={{ color: "black", textDecoration: "none" }}
           >
-            <i className="bx bxs-compass"></i>
-            <span id="span">Explore</span>
+            <i className="bx bxs-group"></i>
+            <span id="span">Members</span>
           </Link>
         </div>
-        <div className="tab-em" data-target="Logout">
-          <i className="bx bx-log-out bx-rotate-180"></i>
-          <span id="span">Logout</span>
-        </div>
-        <div className="tab-em" data-target="Rooms">
+        <div className="tab-em" data-target="Chat">
           <Link
-            to={"/rooms"}
+            to={"/coffe-chat"}
             style={{ color: "black", textDecoration: "none" }}
           >
-            <i className='bx bx-coffee'></i>
+            <i className="bx bx-coffee"></i>
             <span id="span">Coffe Chat</span>
+          </Link>
+        </div>
+        <div className="tab-em" data-target="Shop">
+          <Link to={"/shop"} style={{ color: "black", textDecoration: "none" }}>
+            <i className="bx bxs-shopping-bag-alt"></i>
+            <span id="span">Shop</span>
           </Link>
         </div>
         <div className="tab-em" data-target="Trending">
@@ -59,6 +61,28 @@ export function Col1Tabs({}) {
       </div>
       <div className="col-1-tab-send-button">
         <button onClick={OpenTextBox}>Post To Feed</button>
+      </div>
+      <div className="col-1-tab-extras">
+        <Link to={"/"}>
+          <span>
+            <i className="bx bxs-universal-access"></i>
+          </span>
+        </Link>
+        <Link to={"/"}>
+          <span>
+            <i className="bx bxs-bell"></i>
+          </span>
+        </Link>
+        <Link to={"/"}>
+          <span>
+            <i className="bx bxs-log-out bx-rotate-180"></i>
+          </span>
+        </Link>
+        <Link to={"/"}>
+          <span>
+            <i className="bx bxs-coffee"></i>
+          </span>
+        </Link>
       </div>
     </div>
   );

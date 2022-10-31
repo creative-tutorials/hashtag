@@ -6,7 +6,6 @@ export function CheckUserID({ id_checker_input, hideIDComponent }: any) {
   ) {
     const detectKeyCode = key.code;
     const targetValue = event;
-    console.log(targetValue);
     detectKeyCode === "Enter" ? SubmitInputDetails() : null;
   }
   const SubmitInputDetails = () => {

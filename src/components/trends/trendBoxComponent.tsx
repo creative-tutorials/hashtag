@@ -1,5 +1,5 @@
 import React from "react";
-export function RenderedTrendsBox({ index, style, item }: any) {
+export function TrendBoxComponent({ index, style, item }: any) {
   return (
     <div id={style.trend_box} key={index}>
       <div id={style.trend_image_container}>

@@ -10,7 +10,6 @@ export const ImageComponent = () => {
     loadMountCount.current++;
     if (loadMountCount.current > 1) {
       ImagePostDataFromAPI();
-      console.log('%c Image Post Component Rendered.', 'color: #78D351');
     } else {
       return;
     }

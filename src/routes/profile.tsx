@@ -1,12 +1,14 @@
-import { CheckUserID } from "./CheckUserID";
+import { CheckUserID } from "../auth/CheckUserID";
 import { TrendsHeader } from "../components/trends/TrendsHeader";
 import "../styles/profile.css";
-import { EditUserProfile } from "./EditUserProfile";
+import { EditUserProfile } from "../auth/EditUserProfile";
+import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 export default function ProfilePage() {
   const id_checker_input: any = useRef(false);
   // let loadNameGeneratorComponent = false;
-  const [loadNameGeneratorComponent, setloadNameGeneratorComponent] = useState(false);
+  const [loadNameGeneratorComponent, setloadNameGeneratorComponent] =
+    useState(false);
   const [hideIDComponent, sethideIDComponent] = useState(false);
   useEffect(() => {
     // ();
@@ -21,7 +23,7 @@ export default function ProfilePage() {
     <div className="profile_wrapper">
       <TrendsHeader />
       <div className="banner-profile">
-        <img src="" alt="banner image" loading="lazy" />
+        <img src="banner.jpg" alt="banner image" loading="lazy" />
       </div>
       <div className="main-profile">
         <div className="profile-image">
@@ -47,10 +49,17 @@ export default function ProfilePage() {
           <div className="username">
             <h2>John Doe</h2>
           </div>
-          <div id="followers-and-following-count">
-            <span id="followers">0 followers</span>
-            <span id="following">0 following</span>
+          <div id="lists">
+            <span id="members-list">0 members</span>
+            <span id="profile-view">0 views</span>
+            <span id="post-count">0 posts</span>
           </div>
+        </div>
+      </div>
+      <div className="profile-timelines">
+        <div id="menu">
+          <Link to={""}>Post</Link>
+          <Link to={""}>Friends</Link>
         </div>
       </div>
       <EditUserProfile

@@ -47,14 +47,12 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
   
         if (response.ok) {
           const result = await response.json();
-          console.log(result);
           errorMessage.current = result.message;
           setdetectFormError(false);
           spanElement.current.textContent = memoValue.current;
         }
         if (!response.ok) {
           const result = await response.json();
-          console.log(result);
           errorMessage.current = result.error;
           setdetectFormError(true);
           spanElement.current.textContent = memoValue.current;

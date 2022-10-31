@@ -10,6 +10,12 @@
   width: 100%;
   height: 100%;
 }
+.banner-profile img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
 .profile-image {
   width: 100%;
   height: 100%;
@@ -91,11 +97,11 @@ button#delete-account:hover {
   font-weight: 700;
   color: #191919;
 }
-#followers-and-following-count {
+#lists {
   color: #373737;
   font-weight: 500;
 }
-#followers-and-following-count span#followers {
+#lists span {
   margin-right: 10px;
 }
 .id-checker {
@@ -107,8 +113,6 @@ button#delete-account:hover {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 10px 15px -4px rgba(0, 0, 0, 0.1);
-
-  /* visibility: hidden; */
 }
 .id-checker input {
   width: 100%;
@@ -137,6 +141,7 @@ button#delete-account:hover {
   margin-top: 10px;
   text-align: left;
 }
+/* popup dialogue box */
 .wrapperStyle {
   width: 550px;
   height: 100%;
@@ -150,6 +155,7 @@ button#delete-account:hover {
   margin-top: 100px;
   padding: 20px;
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   z-index: 30;
 }
 .wrapperStyle header {
@@ -233,4 +239,28 @@ select option {
 }
 #btn i {
   margin-left: 10px;
+}
+/* timeline options */
+.profile-timelines {
+  background-color: #fff;
+  margin-top: 15px;
+  padding: 20px;
+}
+.profile-timelines #menu {
+  display: flex;
+  align-items: center;
+}
+.profile-timelines #menu a { 
+  margin-right: 15px;
+  font-size: 1.4rem;
+  text-decoration: overline;
+  text-decoration-color: transparent;
+  color: #9EA0B4;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.profile-timelines #menu a:hover {
+  text-decoration: underline;
+  text-decoration-color: #6f38c5;
+  /* color: red; */
 }
