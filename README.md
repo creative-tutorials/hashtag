@@ -5,7 +5,6 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/creative-tutorials/hashtag?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/creative-tutorials/hashtag?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/creative-tutorials/hashtag?color=blue&style=for-the-badge)
-![Twitter Follow](https://img.shields.io/twitter/follow/idealQik?color=1B9C9A&style=for-the-badge)
 
 
 
