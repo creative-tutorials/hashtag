@@ -11,16 +11,16 @@ export function TrendsHeader({}: any) {
         </div>
         {/*  */}
         <div className="header-links">
-          <Link to="">
+          <Link to="/">
             <span>Home</span>
           </Link>
-          <Link to="">
+          <Link to="/community">
             <span>Community</span>
           </Link>
-          <Link to="">
+          <Link to="/groups">
             <span>Groups</span>
           </Link>
-          <Link to="">
+          <Link to="/shops">
             <span>Shop</span>
           </Link>
         </div>
