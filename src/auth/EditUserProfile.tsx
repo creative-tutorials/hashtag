@@ -1,46 +1,20 @@
 import "../styles/profile.css";
 import { useRef, useState } from "react";
-import React from "react";
-import ReactDOM from "react-dom/client";
-let userRef = "Loading...";
-let userFetch = false;
 export function EditUserProfile({
   loadNameGeneratorComponent,
   setloadNameGeneratorComponent,
-  sethideIDComponent,
+  usernameRef,
 }: any) {
-  const [showError, setshowError] = useState(false);
   const usernameInputField: any = useRef();
+  const counter_text: any = useRef();
+  const [count, setcount] = useState(0)
   const Session: any = localStorage.getItem("session");
   const parsedData = JSON.parse(Session);
   const SubmitDetailsToAPI = async () => {
-    try {
-      const response = await fetch("http://localhost:5301/generateUsername", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: parsedData.email,
-          password: parsedData.password,
-          username: usernameInputField.current.value,
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        const retrievedData = result.YOUR_USERNAME;
-        ChangeUserName(retrievedData);
-      }
-      if (!response.ok) {
-        const result = await response.json();
-        alert(result.error);
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    const usernameFromInputField = usernameInputField.current.value;
+    await ChangeUserName(usernameFromInputField);
   };
-  async function ChangeUserName(retrievedData: any) {
+  async function ChangeUserName(usernameFromInputField: any) {
     try {
       const response = await fetch("http://localhost:5301/edit_profile", {
         method: "PUT",
@@ -51,8 +25,8 @@ export function EditUserProfile({
         body: JSON.stringify({
           email: parsedData.email,
           password: parsedData.password,
-          username: retrievedData,
-          bio: `Hey I am ${retrievedData} Just Browsing :)`,
+          username: usernameFromInputField,
+          bio: `Hey I am ${usernameFromInputField} Just Browsing :)`,
           dob: "12/02/2005",
         }),
       });
@@ -60,7 +34,6 @@ export function EditUserProfile({
       if (response.ok) {
         const result = await response.json();
         setloadNameGeneratorComponent(false);
-        sethideIDComponent(true);
         alert(result.message);
       }
       if (!response.ok) {
@@ -71,14 +44,35 @@ export function EditUserProfile({
       console.error(err);
     }
   }
+  const DetectTypingState = (e:any) => {
+    const character_length = e.target.value.length;
+    setcount(character_length);
+    // console.log(character_length)
+    if(character_length >= 1) {
+      console.info('reset')
+      counter_text.current.style.color = "#000"
+    } 
+    if(character_length >= 80) {
+      console.info('stop now')
+      counter_text.current.style.color = "#5940ba"
+    } 
+    if(character_length >= 90) {
+      console.info('limit reached')
+      counter_text.current.style.color = "#eb1e1e"
 
+    } 
+    
+  }
   return loadNameGeneratorComponent ? (
     <div className={"wrapperStyle"}>
       <header>
         <h2>Edit Profile</h2>
-        <i className='bx bxs-x-circle' onClick={() => {
-          setloadNameGeneratorComponent(false)
-        }}></i>
+        <i
+          className="bx bxs-x-circle"
+          onClick={() => {
+            setloadNameGeneratorComponent(false);
+          }}
+        ></i>
       </header>
       <section id="profile-image-section">
         <h3>Profile Picture</h3>
@@ -121,10 +115,14 @@ export function EditUserProfile({
       <section id="intrest-section">
         <h3>Choose an intrest</h3>
         <menu>
-          <select onChange={(e) => {
-             const value = e.target.value;
-             console.log(value);
-          }}>
+          <select
+            onChange={(e) => {
+              const value = e.target.value;
+              console.log(value);
+            }}
+            defaultValue={"default"}
+          >
+            <option value={"default"} disabled hidden>Choose here</option>
             <optgroup label="Technology">
               <option>Programming</option>
               <option>Web3 & Blockchains</option>
@@ -144,6 +142,19 @@ export function EditUserProfile({
             </optgroup>
           </select>
         </menu>
+      </section>
+      <section id="bio-section">
+        <h3>Bio Section</h3>
+        <p><span ref={counter_text}>{count}</span>/100 characters</p>
+        <textarea
+          name="bio-input"
+          id="bio-input"
+          cols={30}
+          rows={10}
+          maxLength={100}
+          placeholder={"Tell us a litte bit about yourself"}
+          onChange={DetectTypingState}
+        ></textarea>
       </section>
       <section id="username-input">
         <h3>Customize Your Username</h3>

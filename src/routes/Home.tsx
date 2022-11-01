@@ -1,8 +1,8 @@
-import { Col2Tabs } from "../components/UI/Col2Tabs";
+import { Col2Tabs } from "../components/design/Col2Tabs";
 import { useRef, useMemo, useState, useEffect } from "react";
 import { ReadFileFromSystem } from "../components/upload/fileReader";
 import { HashTagQuotes } from "../components/fun/quotes";
-import { Col1Tabs } from "../components/UI/col1Tabs";
+import { Col1Tabs } from "../components/design/col1Tabs";
 import portrait from "/ab1.jpg";
 import React from "react";
 import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
