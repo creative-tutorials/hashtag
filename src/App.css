@@ -155,9 +155,9 @@
 }
 .ipt-right-off-corner #ipt_icon i {
   padding: 8px 8px;
-  background: #dad0ea;
+  background-color: #D0DEEA;
   border-radius: 50%;
-  color: #6f38c5;
+  color: #3871C5;
   font-size: 1.4rem;
   margin-right: 9px;
   cursor: pointer;

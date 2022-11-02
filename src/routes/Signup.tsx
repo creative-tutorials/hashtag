@@ -1,3 +1,4 @@
+import { ShowHidePassword } from "../components/functions/ShowHidePswrd";
 import { Link } from "react-router-dom";
 import { useRef, useState, useMemo } from "react";
 import design from "../styles/signup.module.css";
@@ -5,29 +6,29 @@ function SignupPageComponent() {
   const message = {
     value: "Hello World",
   };
+  const username_field: any = useRef();
   const email_field: any = useRef();
   const password_field: any = useRef();
   const getAgeField: any = useRef();
   const formError: any = useRef();
   const [detectPassword, setdetectPassword] = useState(true);
   const use_memo = useMemo(() => message, [message]);
-  const showandHidePassword = () => {
-    const d_password = password_field.current;
-    // console.log("getPasswordField");
-    if (d_password.type === "password") {
-      d_password.type = "text";
-      setdetectPassword(false);
-    } else {
-      d_password.type = "password";
-      setdetectPassword(true);
-    }
-  };
+  const changePasswordFieldState = ShowHidePassword(
+    password_field,
+    setdetectPassword
+  );
   const SubmitFormDetails = () => {
+    const g_username = username_field.current.value;
     const g_email = email_field.current.value;
     const g_password = password_field.current.value;
     const g_age = getAgeField.current.value;
 
-    async function SendDataToAPI(email: string, password: string, age: number) {
+    async function SendDataToAPI(
+      username: string,
+      email: string,
+      password: string,
+      age: number
+    ) {
       try {
         const response = await fetch("http://localhost:5301/signup", {
           method: "POST",
@@ -38,6 +39,7 @@ function SignupPageComponent() {
           body: JSON.stringify({
             id: 200,
             email: email,
+            username: username,
             password: password,
             age: age,
           }),
@@ -50,7 +52,7 @@ function SignupPageComponent() {
           console.log(result);
           localStorage.setItem("session", JSON.stringify(result));
           setTimeout(() => {
-            window.location.pathname = "/profile";
+            window.location.pathname = "/";
           }, 2000);
         } else {
           const result = await response.json();
@@ -67,12 +69,17 @@ function SignupPageComponent() {
       const prefix = ".";
 
       if (g_email.match(regex) && g_email.includes(prefix)) {
-        SendDataToAPI(g_email, g_password, g_age);
+        SendDataToAPI(g_username, g_email, g_password, g_age);
       } else {
         message.value = "email field is not valid";
       }
     };
-    if (g_email === "" || g_password === "" || g_age === "") {
+    if (
+      g_username === "" ||
+      g_email === "" ||
+      g_password === "" ||
+      g_age === ""
+    ) {
       message.value = "Please enter your email address, password and age";
     } else {
       CheckRegex();
@@ -85,13 +92,21 @@ function SignupPageComponent() {
         <p id={design.header}>Sign Up</p>
         <div id={design.cms}>
           <div id={design.inputbox}>
+            <span>Username</span>
+            <input
+              type="text"
+              placeholder="Your username"
+              ref={username_field}
+            />
+            <p id={design.form_error} ref={formError}></p>
+          </div>
+          <div id={design.inputbox}>
             <span>Email</span>
             <input
               type="text"
               placeholder="mymail@gmail.com"
               ref={email_field}
             />
-            <p id={design.form_error} ref={formError}></p>
           </div>
           <div id={design.inputbox}>
             <span>Password</span>
@@ -102,7 +117,7 @@ function SignupPageComponent() {
             />
             <i
               className={detectPassword ? "bx bx-show" : "bx bx-hide"}
-              onClick={showandHidePassword}
+              onClick={changePasswordFieldState}
             ></i>
           </div>
           <div id={design.inputbox}>
@@ -112,31 +127,19 @@ function SignupPageComponent() {
           <p id={design.fgtpassword}>
             <Link to={`/forgot-password`}>Forgot password?</Link>
           </p>
-          <div id={design.tickbox}>
-            <span id={design.checkbox}>
-              <input type="checkbox" name="" id="check" hidden />
-              <label htmlFor="check">
-                <div id={design.label}></div>
-              </label>
-              <span id={design.check_text}>
-                I agree with{" "}
-                <a href="https://google.com" id={design.termscondition}>
-                  Terms&Conditions
-                </a>
-              </span>{" "}
-            </span>
-          </div>
           <div id={design.signoption}>
             <span>Sign up with</span>
             <div id={design.options}>
-              <i
-                className="bx bxl-facebook-circle"
+              <img
+                src="facebook.png"
+                alt="facebook logo"
                 onClick={() => confirm("coming soon")}
-              ></i>
-              <i
-                className="bx bxl-google"
+              />
+              <img
+                src="google.png"
+                alt="google logo"
                 onClick={() => confirm("coming soon")}
-              ></i>
+              />
             </div>
           </div>
           <div id={design.reqbtn}>

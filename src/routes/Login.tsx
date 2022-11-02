@@ -42,7 +42,7 @@ function LoginPageComponent() {
           const result = await response.json();
           console.log(result);
           localStorage.setItem("session", JSON.stringify(result));
-          message.value = 'Login Successfull';
+          message.value = "Login Successfull";
           email_error.current.textContent = use_memo.value;
           pswrd_error.current.textContent = use_memo.value;
         } else {
@@ -90,7 +90,11 @@ function LoginPageComponent() {
           </div>
           <div id={login_design.inputbox}>
             <span>Password</span>
-            <input type="password" placeholder="*********" ref={password_field} />
+            <input
+              type="password"
+              placeholder="*********"
+              ref={password_field}
+            />
             <i
               className={detectPassword ? "bx bx-show" : "bx bx-hide"}
               onClick={showandHidePassword}
@@ -100,26 +104,19 @@ function LoginPageComponent() {
           <p id={login_design.fgtpassword}>
             <Link to={`/forgot-password`}>Forgot password?</Link>
           </p>
-          <div id={login_design.tickbox}>
-            <span id={login_design.checkbox}>
-              <input type="checkbox" name="" id="check" hidden />
-              <label htmlFor="check">
-                <div id={login_design.label}></div>
-              </label>
-              <span id={login_design.check_text}>Remember me</span>{" "}
-            </span>
-          </div>
           <div id={login_design.signoption}>
             <span>Sign in with</span>
             <div id={login_design.options}>
-              <i
-                className="bx bxl-facebook-circle"
+              <img
+                src="facebook.png"
+                alt="facebook logo"
                 onClick={() => confirm("coming soon")}
-              ></i>
-              <i
-                className="bx bxl-google"
+              />
+              <img
+                src="google.png"
+                alt="google logo"
                 onClick={() => confirm("coming soon")}
-              ></i>
+              />
             </div>
           </div>
           <div id={login_design.reqbtn}>
