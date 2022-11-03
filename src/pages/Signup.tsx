@@ -80,7 +80,7 @@ function SignupPageComponent() {
       g_password === "" ||
       g_age === ""
     ) {
-      message.value = "Please enter your email address, password and age";
+      message.value = "Please fill all the input fields below";
     } else {
       CheckRegex();
     }

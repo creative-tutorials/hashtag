@@ -1,32 +1,36 @@
-import reactLogo from "./assets/react.svg";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Loader from './components/loader';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import HashtagHomePage from "./routes/Home";
-import LoginPageComponent from "./routes/Login";
-import SignupPageComponent from "./routes/Signup";
-import TrendsPage from "./routes/trendHomePage";
 import ProtectedRoute from "./ProtectedRoute";
-import ProfilePage from './routes/profile';
+
+const HashtagHomePage = lazy(() => import("./pages/Home"));
+const LoginPageComponent = lazy(() => import("./pages/Login"));
+const SignupPageComponent = lazy(() => import("./pages/Signup"));
+const TrendsPage = lazy(() => import("./pages/trendHomePage"));
+const ProfilePage = lazy(() => import("./pages/profile"));
+// const  = lazy(() => import("./components/loader"));
 function App() {
   return (
-    <>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<ProtectedRoute/>}>
-          <Route path="/" element={<HashtagHomePage />} />
-        </Route>  
-        <Route path="/login" element={<LoginPageComponent />} />
-        <Route path="/signup" element={<SignupPageComponent />} />
-        <Route element={<ProtectedRoute/>}>
-        <Route path="/profile" element={<ProfilePage />} />
-        </Route>  
-        <Route element={<ProtectedRoute/>}>
-        <Route path="/trends" element={<TrendsPage />} />
-        </Route>  
-      </Routes>
-    </BrowserRouter>
-    
-    </>
+    <div className="App">
+      <Router>
+        <Suspense fallback={<Loader     />}>
+          <Routes>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={<HashtagHomePage />} />
+            </Route>
+            <Route path="/login" element={<LoginPageComponent />} />
+            <Route path="/signup" element={<SignupPageComponent />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/profile" element={<ProfilePage />} />
+            </Route>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/trends" element={<TrendsPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Router>
+    </div>
   );
 }
 
