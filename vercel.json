@@ -1,0 +1,17 @@
+{
+    "rewrites": [
+      { "source": "/login", "destination": "/src/routes/Login.tsx" },
+      { "source": "/signup", "destination": "/src/routes/Signup.tsx" },
+      {
+        "source": "/src/App.tsx",
+        "has": [
+          {
+            "type": "header",
+            "key": "x-vercel-ip-country",
+            "value": "GB"
+          }
+        ],
+        "destination": "/"
+      }
+    ]
+  }
