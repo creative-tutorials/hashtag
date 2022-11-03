@@ -5,7 +5,7 @@ function ProtectedRoute() {
 
     const isAuthenticated = localStorage.getItem("session");
     return (
-        isAuthenticated ? <Outlet/> : <Navigate to={'/login'}/>
+        isAuthenticated ? <Outlet/> : <Navigate to={'/signup'}/>
     );
 }
 
