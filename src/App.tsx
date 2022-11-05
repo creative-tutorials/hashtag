@@ -16,17 +16,14 @@ function App() {
       <Router>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route element={<ProtectedRoute />}>
-              <Route exact path="/" element={<HashtagHomePage />} />
-            </Route>
+            <Route path="/" element={<HashtagHomePage />} />
+            {/* <Route element={<ProtectedRoute />}></Route> */}
             <Route path="login" element={<LoginPageComponent />} />
             <Route path="signup" element={<SignupPageComponent />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="profile" element={<ProfilePage />} />
-            </Route>
-            <Route element={<ProtectedRoute />}>
-              <Route path="trends" element={<TrendsPage />} />
-            </Route>
+            <Route path="profile" element={<ProfilePage />} />
+            {/* <Route element={<ProtectedRoute />}></Route> */}
+            <Route path="trends" element={<TrendsPage />} />
+            {/* <Route element={<ProtectedRoute />}></Route> */}
           </Routes>
         </Suspense>
       </Router>
