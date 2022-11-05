@@ -17,7 +17,7 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route element={<ProtectedRoute />}>
-              <Route path="/" element={<HashtagHomePage />} />
+              <Route exact path="/" element={<HashtagHomePage />} />
             </Route>
             <Route path="login" element={<LoginPageComponent />} />
             <Route path="signup" element={<SignupPageComponent />} />
