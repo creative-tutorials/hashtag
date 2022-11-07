@@ -29,8 +29,8 @@ export function Col2Tabs({
             <Link to="/community">
               <span>Community</span>
             </Link>
-            <Link to="/groups">
-              <span>Groups</span>
+            <Link to="">
+              <span>Chat</span>
             </Link>
             <Link to="/shop">
               <span>Shop</span>

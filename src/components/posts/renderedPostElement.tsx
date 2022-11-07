@@ -7,7 +7,7 @@ export function RenderedPost({ post, postui }: any) {
           <div className={postui.wrapper_item} key={index}>
             <div className={postui.nxd}>
               <div className={postui.nxdleft}>
-                <img src={"/vite.svg"} alt="pfp" width={50} height={50} />
+                <img src={item.profile_image} alt="pfp" width={50} height={50} />
                 <div className={postui.nxdright}>
                   <div className={postui.name}>
                     <span id={postui.name}>{item.username}</span>

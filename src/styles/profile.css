@@ -27,45 +27,6 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: radial-gradient(
-        circle at 100% 100%,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0) 24px,
-        transparent 24px
-      )
-      0% 0%/30px 30px no-repeat,
-    radial-gradient(
-        circle at 0 100%,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0) 24px,
-        transparent 24px
-      )
-      100% 0%/30px 30px no-repeat,
-    radial-gradient(
-        circle at 100% 0,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0) 24px,
-        transparent 24px
-      )
-      0% 100%/30px 30px no-repeat,
-    radial-gradient(
-        circle at 0 0,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0) 24px,
-        transparent 24px
-      )
-      100% 100%/30px 30px no-repeat,
-    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) 50% 50% /
-      calc(100% - 12px) calc(100% - 60px) no-repeat,
-    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) 50% 50% /
-      calc(100% - 60px) calc(100% - 12px) no-repeat,
-    linear-gradient(
-      90deg,
-      rgba(36, 87, 149, 1) 0%,
-      rgba(75, 15, 171, 0.59) 100%
-    );
-  padding: 3px;
-  box-sizing: content-box;
 }
 #features button {
   padding: 10px 15px;
@@ -92,6 +53,9 @@ button#delete-account {
 button#delete-account:hover {
   background: #bd2836;
   border-color: #bd2836;
+}
+.profile-details {
+  margin-top: 15px;
 }
 .profile-details .username h2 {
   font-weight: 700;
@@ -175,7 +139,7 @@ button#delete-account:hover {
   right: 0;
   font-size: 2rem;
   cursor: pointer;
-  color: #B7ACC8;
+  color: #cbcbcb;
 }
 .wrapperStyle input {
   width: 100%;
@@ -184,12 +148,15 @@ button#delete-account:hover {
   border: 2px solid rgb(232, 232, 233);
   outline: none;
 }
+.wrapperStyle input:is(:focus) {
+  border-color: #007bff;
+}
 .wrapperStyle section {
   width: 100%;
   margin-top: 10px;
 }
 .wrapperStyle section label i.bx-edit {
-  color: #B24BED;
+  color: #b24bed;
   font-size: 23px;
   cursor: pointer;
   display: flex;
@@ -217,12 +184,13 @@ select option {
   width: 100%;
   padding: 9px;
   margin-top: 10px;
+  background: rgb(8, 104, 221);
   background: linear-gradient(
-    85deg,
-    rgba(133, 82, 214, 1) 0%,
-    rgba(111, 56, 197, 1) 100%
+    79deg,
+    rgba(8, 104, 221, 0.6225840678068102) 0%,
+    rgba(32, 131, 195, 0.5889706224286589) 100%
   );
-  color: rgb(232, 232, 233);
+  color: #fff;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -234,7 +202,7 @@ select option {
   cursor: pointer;
 }
 #btn:active {
-  color: rgb(183, 165, 212);
+  color: #111;
   box-shadow: inset 10px 11px 25px 9px rgba(0, 0, 0, 0.1);
 }
 #btn i {
@@ -250,20 +218,31 @@ select option {
   display: flex;
   align-items: center;
 }
-.profile-timelines #menu a { 
+.profile-timelines #menu a {
   margin-right: 15px;
   font-size: 1.4rem;
   text-decoration: overline;
   text-decoration-color: transparent;
-  color: #9EA0B4;
+  color: #9ea0b4;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 .profile-timelines #menu a:hover {
   text-decoration: underline;
-  text-decoration-color: #6f38c5;
+  text-decoration-color: #007bff;
   /* color: red; */
 }
 .wrapperStyle textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #bfbfbf;
+  outline: none;
+  border-radius: 5px;
+  resize: none;
   height: 200px;
-} 
+}
+
+.wrapperStyle textarea:is(:focus) {
+  border-color: #007bff;
+}

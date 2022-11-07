@@ -1,20 +1,50 @@
+import { RenderProfile } from "../auth/renderprofile";
 import "../styles/profile.css";
 import { useRef, useState } from "react";
 export function EditUserProfile({
   loadNameGeneratorComponent,
   setloadNameGeneratorComponent,
-  usernameRef,
 }: any) {
   const usernameInputField: any = useRef();
   const counter_text: any = useRef();
-  const [count, setcount] = useState(0)
-  const Session: any = localStorage.getItem("session");
-  const parsedData = JSON.parse(Session);
+  const bioInput: any = useRef();
+  const profile_address: any = useRef();
+  const banner_address: any = useRef();
+  const [count, setcount] = useState(0);
   const SubmitDetailsToAPI = async () => {
+    const regex = /https:\/\//i;
+    const Session: any = localStorage.getItem("session");
+    const parsedData = JSON.parse(Session);
     const usernameFromInputField = usernameInputField.current.value;
-    await ChangeUserName(usernameFromInputField);
+    const setbioInput = bioInput.current.value;
+    const getProfileImage = profile_address.current.value;
+    const getBannerImage = banner_address.current.value;
+    if (getProfileImage === "" && getBannerImage === "") {
+      alert("Please paste in an image address URL to continue");
+    } else {
+      ValidateInputRegex();
+    }
+    async function ValidateInputRegex() {
+      if (regex.test(getProfileImage) && regex.test(getBannerImage)) {
+        await ChangeProfileDeatils(
+          usernameFromInputField,
+          setbioInput,
+          getProfileImage,
+          getBannerImage,
+          parsedData
+        );
+      } else {
+        alert("URL must include *https* for better security");
+      }
+    }
   };
-  async function ChangeUserName(usernameFromInputField: any) {
+  async function ChangeProfileDeatils(
+    usernameFromInputField: string,
+    setbioInput: string,
+    getProfileImage: string,
+    getBannerImage: string,
+    parsedData: any
+  ) {
     try {
       const response = await fetch("http://localhost:5301/edit_profile", {
         method: "PUT",
@@ -26,8 +56,9 @@ export function EditUserProfile({
           email: parsedData.email,
           password: parsedData.password,
           username: usernameFromInputField,
-          bio: `Hey I am ${usernameFromInputField} Just Browsing :)`,
-          dob: "12/02/2005",
+          bio: setbioInput,
+          profile_image: getProfileImage,
+          banner_image: getBannerImage,
         }),
       });
 
@@ -35,6 +66,7 @@ export function EditUserProfile({
         const result = await response.json();
         setloadNameGeneratorComponent(false);
         alert(result.message);
+        RenderProfile();
       }
       if (!response.ok) {
         const result = await response.json();
@@ -44,25 +76,17 @@ export function EditUserProfile({
       console.error(err);
     }
   }
-  const DetectTypingState = (e:any) => {
+  const DetectTypingState = (e: any) => {
     const character_length = e.target.value.length;
     setcount(character_length);
-    // console.log(character_length)
-    if(character_length >= 1) {
-      console.info('reset')
-      counter_text.current.style.color = "#000"
-    } 
-    if(character_length >= 80) {
-      console.info('stop now')
-      counter_text.current.style.color = "#5940ba"
-    } 
-    if(character_length >= 90) {
-      console.info('limit reached')
-      counter_text.current.style.color = "#eb1e1e"
-
-    } 
-    
-  }
+    counter_text.current.style.color = "black";
+    if (character_length >= 80) {
+      counter_text.current.style.color = "#005ebc";
+    }
+    if (character_length >= 90) {
+      counter_text.current.style.color = "#ff0000";
+    }
+  };
   return loadNameGeneratorComponent ? (
     <div className={"wrapperStyle"}>
       <header>
@@ -77,75 +101,27 @@ export function EditUserProfile({
       <section id="profile-image-section">
         <h3>Profile Picture</h3>
         <input
-          type="file"
-          name="banner-profile"
-          id="edit-profile-picture"
-          hidden
-          accept=".jpg, .png, .jpeg"
-        />
-        <label htmlFor="edit-profile-picture">
-          <dd>
-            <i className="bx bx-edit"></i>
-          </dd>
-        </label>
-        <img
-          src="icon.png"
-          alt="profile-image"
-          loading="lazy"
-          width={100}
-          height={100}
+          type="url"
+          name="image_address"
+          id="image_address"
+          placeholder="https://image_address"
+          size={30}
+          ref={profile_address}
         />
       </section>
       <section id="banner-image-section">
         <h3>Banner Picture</h3>
         <input
-          type="file"
-          name="profile-picture"
-          id="edit-profile-picture"
-          hidden
-          accept=".jpg, .png, .jpeg"
+          type="url"
+          name="image_address"
+          id="image_address"
+          placeholder="https://image_address"
+          size={30}
+          ref={banner_address}
         />
-        <label htmlFor="edit-profile-picture">
-          <dd>
-            <i className="bx bx-edit"></i>
-          </dd>
-        </label>
-        <img src="banner.jpg" alt="banner-image" width={500} />
-      </section>
-      <section id="intrest-section">
-        <h3>Choose an intrest</h3>
-        <menu>
-          <select
-            onChange={(e) => {
-              const value = e.target.value;
-              console.log(value);
-            }}
-            defaultValue={"default"}
-          >
-            <option value={"default"} disabled hidden>Choose here</option>
-            <optgroup label="Technology">
-              <option>Programming</option>
-              <option>Web3 & Blockchains</option>
-              <option>Game Development</option>
-              <option>Web Development</option>
-              <option>App Development</option>
-              <option>Web application</option>
-            </optgroup>
-            <optgroup label="Music">
-              <option>Music Production</option>
-            </optgroup>
-            <optgroup label="LifeStyle">
-              <option>Cooking</option>
-              <option>Dancing</option>
-              <option>Playing Instruments</option>
-              <option>Playing Games</option>
-            </optgroup>
-          </select>
-        </menu>
       </section>
       <section id="bio-section">
         <h3>Bio Section</h3>
-        <p><span ref={counter_text}>{count}</span>/100 characters</p>
         <textarea
           name="bio-input"
           id="bio-input"
@@ -153,8 +129,12 @@ export function EditUserProfile({
           rows={10}
           maxLength={100}
           placeholder={"Tell us a litte bit about yourself"}
+          ref={bioInput}
           onChange={DetectTypingState}
         ></textarea>
+        <p>
+          <span ref={counter_text}>{count}</span>/100 characters
+        </p>
       </section>
       <section id="username-input">
         <h3>Customize Your Username</h3>

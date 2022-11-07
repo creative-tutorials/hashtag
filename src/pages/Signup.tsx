@@ -1,4 +1,4 @@
-import { ShowHidePassword } from "../components/functions/ShowHidePswrd";
+import { ShowHidePassword } from "../function/ShowHidePswrd";
 import { Link } from "react-router-dom";
 import { useRef, useState, useMemo } from "react";
 import design from "../styles/signup.module.css";
@@ -122,11 +122,8 @@ function SignupPageComponent() {
           </div>
           <div id={design.inputbox}>
             <span>Age</span>
-            <input type="number" placeholder="" ref={getAgeField} />
+            <input type="number" placeholder="age" ref={getAgeField} />
           </div>
-          <p id={design.fgtpassword}>
-            <Link to={`/forgot-password`}>Forgot password?</Link>
-          </p>
           <div id={design.signoption}>
             <span>Sign up with</span>
             <div id={design.options}>

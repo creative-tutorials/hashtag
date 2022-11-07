@@ -2,7 +2,7 @@ import React from "react";
 import logo from "/hashtag_logo.png";
 import "../../App.css";
 import { Link } from "react-router-dom";
-export function TrendsHeader({}: any) {
+export default function TrendsHeader({}: any) {
   return (
     <div id="header-wrapper">
       <div className="header-left-item">
@@ -17,8 +17,8 @@ export function TrendsHeader({}: any) {
           <Link to="/community">
             <span>Community</span>
           </Link>
-          <Link to="/groups">
-            <span>Groups</span>
+          <Link to="">
+            <span>Chat</span>
           </Link>
           <Link to="/shops">
             <span>Shop</span>

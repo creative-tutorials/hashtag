@@ -30,7 +30,7 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
   async function SendInputFieldDataToAPI(field: string,) {
     if(Session) {
       try {
-        const response = await fetch("http://localhost:5301/make_post", {
+        const response = await fetch("http://localhost:5301/post", {
           method: "POST",
           headers: {
             apikey: import.meta.env.VITE_API_KEY,
