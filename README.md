@@ -38,7 +38,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#😎about-hashtag">About The Project</a>
+      <a href="#📑about-hashtag">About The Project</a>
       <ul>
         <li><a href="#⚙built-with">Built With</a></li>
       </ul>
@@ -63,7 +63,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## 😎About Hashtag
+## 📑About Hashtag
 
 ![hashtag-demo-video](demo.gif)
 
@@ -154,7 +154,7 @@ _Below is a guide on installing and setting up this app.
    ```
 2. Install NPM packages
    ```sh
-   yarn install
+   npm install
    ```
 3. To become admin and manage all post data, and user auth. You need to fill out a form, and I'll send you our app API_KEY. `Note that your request will be denied if you aren't trusted or you violate any of the terms of usage/service in the app. Please also take note that to become an admin you must be active on the app for **2months** when the app releases before granting such permission` 
 
