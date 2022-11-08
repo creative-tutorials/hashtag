@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
 .trendBody {
   width: 100%;
 }
@@ -5,40 +6,21 @@
 /* The body of the Trends Page */
 #body_ {
   width: 100%;
+  /* z-index: -88; */
   padding: 25px;
 }
+#body_ #top_text p {
+  color: #1D1CE5;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+}
 #body_ #top_text h3 {
-  font-size: 1.4em;
-  font-weight: 600;
-}
-#reloadBtn #rldBtn {
-  padding: 10px;
-  border-radius: 8px;
-  outline: none;
-  border: none;
-  background-color: #fff;
-  font-weight: 600;
-  font-size: 1em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  color: #182535;
-  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
-}
-#reloadBtn #rldBtn i {
-  font-size: 1.3em;
-  /* color: red; */
-}
-#reloadBtn #rldBtn:hover {
-  box-shadow: inset 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
-}
-#reloadBtn #rldBtn:hover i {
-  animation: make_it_move 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-@keyframes make_it_move {
-  100% {
-    rotate: 360deg;
-  }
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
 }
 #trends_container {
   width: 100%;
@@ -47,11 +29,9 @@
 #trends_container {
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* justify-content: center; */
 }
 #trend_box {
   width: 500px;
@@ -61,12 +41,26 @@
   margin: 10px 0 10px 10px;
   border-radius: 10px;
 }
+#trend_image_container {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
 #trend_image_container img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+#trend_box:hover img {
+  scale: 1.1;
 }
 #trend_text_container h3 {
-  font-weight: 500;
+  margin-top: 14px;
+  font-weight: 600;
   font-size: 1.4em;
 }
 #trend_text_container p strong {
@@ -74,14 +68,28 @@
   font-weight: 500;
   color: gray;
 }
+#count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
 #count span {
   font-size: 14px;
   font-weight: 500;
-  color: gray;
+  color: #50577A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#count span i {
+  margin-right: 5px;
+  color: #1D1CE5;
 }
 #call_to_action {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 #cta_btn {
   width: 500px;
@@ -90,8 +98,8 @@
   border-radius: 5px;
   outline: none;
   border: none;
-  color: #182535;
-  background-color: #e4e4e4;
+  color: #F7F7F7;
+  background-color: #2146C7;
   cursor: pointer;
   font-size: 1.1rem;
   display: flex;
@@ -99,7 +107,7 @@
   justify-content: center;
 }
 #cta_btn:hover {
-  box-shadow: inset 0px 10px 15px -10px rgba(0, 0, 0, 0.1);
+  background-color: #1D1CE5;
 }
 #cta_btn i {
   margin-right: 5px;
@@ -112,6 +120,6 @@
     width: 100%;
     height: 100%;
     max-height: 500px;
-    overflow: auto;
+    overflow: hidden;
   }
 }

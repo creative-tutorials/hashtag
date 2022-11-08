@@ -67,16 +67,39 @@
   padding: 14px;
   border-radius: 8px;
   outline: none;
-  border: none;
-  background-color: #9092a1;
+  border: 2px solid transparent;
+  background-color: #2146C7;
   color: #fff;
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.1s cubic-bezier(0.11, -0.09, 0.66, 0.64);
+  position: relative;
 }
-.col-1-tab-send-button button:hover {
-  background-color: #142fb6;
+.col-1-tab-send-button button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #2146C7;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+}
+.col-1-tab-send-button button:is(:hover) {
+  background-color: transparent;
+  border: 2px solid #142fb6;
+  color: #142fb6;
+}
+.col-1-tab-send-button button:is(:active) {
+  transform: translateY(3px);
+}
+.col-1-tab-send-button button:is(:hover)::before {
+  opacity: 1;
 }
 .col-1-tab-extras {
   margin-top: 15px;
@@ -89,14 +112,14 @@
 }
 .col-1-tab-extras a {
   font-size: 1.4rem;
-  color: #46424c;
+  color: #66767d;
 }
 .col-2 {
   width: 100%;
 }
 #header-wrapper {
   background-color: #fff;
-  padding-right: 29px;
+  padding: 10px 29px 10px 0;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -104,7 +127,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  z-index: 30;
 }
 #header-wrapper .header-links a {
   margin-left: 35px;
@@ -120,6 +143,11 @@
   display: flex;
   align-items: center;
 }
+#header-wrapper .header-left-item img {
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
 #header-wrapper .header-right-item .header-links-2 a {
   font-size: 1.7rem;
   margin-right: 20px;
@@ -129,9 +157,10 @@
   margin-top: 20px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   width: 100%;
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 5px;
 }
 .col-2-input_box img {

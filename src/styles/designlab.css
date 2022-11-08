@@ -51,11 +51,14 @@
   border-radius: 5px;
   outline: none;
   border: none;
-  background-color: #6f38c5;
+  background-color: #1D1CE5;
   color: #fff;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   font-weight: 500;
+}
+#bx-cl-right button:active {
+  background-color: #4649FF;
 }
 textarea {
   margin-top: 20px;

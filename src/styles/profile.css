@@ -55,13 +55,22 @@ button#delete-account:hover {
   border-color: #bd2836;
 }
 .profile-details {
-  margin-top: 15px;
+  margin-top: 0px;
 }
 .profile-details .username h2 {
   font-weight: 700;
   color: #191919;
 }
+.profile-details .username .error-heading {
+  background-color: #F8C4B4;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 500px;
+  padding: 10px 15px;
+}
 #lists {
+  margin: 10px 0 0 0;
+  /* 10px-top; 0-right; 0-bottom 0-left */
   color: #373737;
   font-weight: 500;
 }

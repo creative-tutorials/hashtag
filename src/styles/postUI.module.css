@@ -16,7 +16,7 @@
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .nxd {
   display: flex;
@@ -69,8 +69,7 @@
   border-radius: 50%;
 }
 .pst_body {
-  /* margin-top: 10px; */
-  margin-left: 65px;
+  margin-left: 58px;
 }
 #pst_content span {
   font-size: 20px;
