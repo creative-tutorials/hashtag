@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/hashtag_logo.png";
+import logo from "/3.png";
 import "../../App.css";
 import { Link } from "react-router-dom";
 export default function TrendsHeader({}: any) {
@@ -7,7 +7,7 @@ export default function TrendsHeader({}: any) {
     <div id="header-wrapper">
       <div className="header-left-item">
         <div className="img">
-          <img src={logo} alt="app_logo" width={100} height={100} />
+          <img src={logo} alt="app_logo" width={50} height={50} />
         </div>
         {/*  */}
         <div className="header-links">
