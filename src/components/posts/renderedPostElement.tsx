@@ -1,4 +1,3 @@
-import React from "react";
 export function RenderedPost({ post, postui }: any) {
   return (
     <div>

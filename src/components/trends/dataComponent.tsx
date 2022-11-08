@@ -16,7 +16,8 @@ export function DataComponent({ data, props, style, dataRef }: any) {
   return (
     <>
       <span id={style.top_text}>
-        <h3>Discover new trends</h3>
+        <p>Discover trends from around the world</p>
+        <h3>Let’s Discover Some Trends</h3>
       </span>
       <div id={style.trends_container} ref={trendsContainer}>
         {dataRef.map(function (item: any, index: any) {
