@@ -1,4 +1,4 @@
-import { RenderProfile } from "../auth/renderprofile";
+import { UpdateProfile } from "../function/UpdateProfile";
 import "../styles/profile.css";
 import { useRef, useState } from "react";
 export function EditUserProfile({
@@ -26,56 +26,19 @@ export function EditUserProfile({
     }
     async function ValidateInputRegex() {
       if (regex.test(getProfileImage) && regex.test(getBannerImage)) {
-        await ChangeProfileDeatils(
+        UpdateProfile(
           usernameFromInputField,
           setbioInput,
           getProfileImage,
           getBannerImage,
-          parsedData
+          parsedData,
+          setloadNameGeneratorComponent
         );
       } else {
         alert("URL must include *https* for better security");
       }
     }
   };
-  async function ChangeProfileDeatils(
-    usernameFromInputField: string,
-    setbioInput: string,
-    getProfileImage: string,
-    getBannerImage: string,
-    parsedData: any
-  ) {
-    try {
-      const response = await fetch("http://localhost:5301/edit_profile", {
-        method: "PUT",
-        headers: {
-          apikey: import.meta.env.VITE_API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: parsedData.email,
-          password: parsedData.password,
-          username: usernameFromInputField,
-          bio: setbioInput,
-          profile_image: getProfileImage,
-          banner_image: getBannerImage,
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        setloadNameGeneratorComponent(false);
-        alert(result.message);
-        RenderProfile();
-      }
-      if (!response.ok) {
-        const result = await response.json();
-        alert(result.error);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }
   const DetectTypingState = (e: any) => {
     const character_length = e.target.value.length;
     setcount(character_length);
