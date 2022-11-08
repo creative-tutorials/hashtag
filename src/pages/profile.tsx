@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import "../styles/profile.css";
 import { EditUserProfile } from "../auth/EditUserProfile";
+import { FetchProfileDataFromAPI } from "../function/FetchProfile";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-// import { IncrementCountOnPageLoad } from "../function/IncrementCount";
 const TrendsHeader = lazy(() => import("../components/trends/TrendsHeader"));
 const ProfileImage = lazy(
   () => import("../components/profile-component/ProfileImage")
@@ -14,60 +14,38 @@ const BannerProfile = lazy(
 export default function ProfilePage() {
   let loadCounter = useRef(0);
   const [isLoaded, setisLoaded] = useState(false);
+  const [errorComponent, seterrorComponent] = useState();
   const [loadNameGeneratorComponent, setloadNameGeneratorComponent] =
     useState(false);
   const [imageSrc, setImageSrc] = useState();
-  const [username, setusernameValue] = useState()
+  const [bannerImgSrc, setbannerImgSrc] = useState();
+  const [username, setusernameValue] = useState();
   function ShowProfileChangerComponent() {
     setloadNameGeneratorComponent(true);
   }
   useEffect(() => {
     loadCounter.current++;
     if (loadCounter.current > 1) {
-      FetchProfileDataFromAPI();
+      FetchProfileDataFromAPI(
+        setisLoaded,
+        setusernameValue,
+        setImageSrc,
+        setbannerImgSrc,
+        seterrorComponent,
+      );
     }
   }, [loadCounter]);
-  const FetchProfileDataFromAPI = async () => {
-    const Session: any = localStorage.getItem("session");
-    const parsedData = JSON.parse(Session);
-    const userPublicID = parsedData.publicID;
-    try {
-      const response = await fetch(
-        `http://localhost:5301/profile/${userPublicID}`,
-        {
-          method: "GET",
-          headers: {
-            apikey: import.meta.env.VITE_API_KEY,
-            "Content-Type": "application/json",
-          },
-        }
-      );
 
-      if (response.ok) {
-        const result = await response.json();
-        setisLoaded(true);
-        setusernameValue(result.username)
-        setImageSrc(result.profile_image);
-      }
-      if (!response.ok) {
-        const result = await response.json();
-        setisLoaded(false);
-        alert(result.error);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
   return (
     <div className="profile_wrapper">
       <Suspense fallback={<div>Loading...</div>}>
         <TrendsHeader />
-        <BannerProfile />
+        <BannerProfile bannerImg={bannerImgSrc} />
       </Suspense>
       <div className="main-profile">
         <div className="profile-image">
           <Suspense fallback={<div>Loading...</div>}>
-            <ProfileImage   imageSrc={imageSrc}  />
+            <ProfileImage imageSrc={imageSrc} />
           </Suspense>
 
           <div id="features">
@@ -91,10 +69,8 @@ export default function ProfilePage() {
             {isLoaded ? (
               <h2>{username}</h2>
             ) : (
-              <h3 style={{ color: "#CF0A0A" }}>
-                {
-                  "Failed to load profile data, this error may be caused by the client side or server side"
-                }
+              <h3 className="error-heading" style={{ color: "#CF0A0A" }}>
+                {errorComponent}
                 <p> </p>
               </h3>
             )}
