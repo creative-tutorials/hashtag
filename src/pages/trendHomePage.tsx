@@ -1,4 +1,4 @@
-import { TrendsHeader } from '../components/trends/TrendsHeader';
+import TrendsHeader  from '../components/trends/TrendsHeader';
 import trends_style from "../styles/trendsUI.module.css";
 import { Link } from "react-router-dom";
 import React from "react";
