@@ -1,7 +1,7 @@
-export default function BannerProfile({}) {
+export default function BannerProfile({bannerImg}:any) {
   return (
     <div className="banner-profile">
-      <img src="account.png" alt="banner image" loading="lazy" />
+      <img src={bannerImg} alt="banner image" loading="lazy" />
     </div>
   );
 }
