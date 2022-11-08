@@ -1,18 +1,14 @@
-import React from "react";
 export function TrendBoxComponent({ index, style, item }: any) {
   return (
     <div id={style.trend_box} key={index}>
       <div id={style.trend_image_container}>
-        <img src="" alt="image of trend" />
+        <img src={item.thumbnail} alt="image of trend" loading={"lazy"} />
       </div>
       <div id={style.trend_text_container}>
-        <h3>{item.trends}</h3>
-        <p>
-          <strong>created Jun2017</strong>
-        </p>
+        <h3>{item.title}</h3>
       </div>
       <div id={style.count}>
-        <span>1.1K People Intrested</span> <span>60K People Like it</span>
+        <span><i className='bx bxs-group'></i>{item.likes}</span> <span><i className='bx bxs-like' ></i>{item.intrest}</span>
       </div>
       <div id={style.call_to_action}>
         <button id={style.cta_btn} onClick={() => console.log('Intrested in', item.trends)}>
