@@ -65,9 +65,7 @@
 
 ## 📑About Hashtag
 
-<iframe src="https://www.loom.com/embed/5edf4990c34d45f3ac866899f81a058b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-
-</iframe>
+https://user-images.githubusercontent.com/68476321/200651300-316e74dd-6480-4d04-94e5-e6c2e588787d.mp4
 
 Hashtag is a simple social networking platform that allows you to connect to different people around different organizations and locations. Hashtag has an aim of disculding bad words, bad posts, and any form of abusive behavior that violates our Policies.
 
