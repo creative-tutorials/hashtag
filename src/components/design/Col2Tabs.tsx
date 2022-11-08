@@ -3,7 +3,7 @@ import { ImageComponent } from "../posts/getImagePost";
 import { InputPopUp } from "./textBox";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "/hashtag_logo.png";
+import logo from "/3.png";
 export function Col2Tabs({
   portrait,
   input,
@@ -19,7 +19,7 @@ export function Col2Tabs({
       <div id="header-wrapper">
         <div className="header-left-item">
           <div className="img">
-            <img src={logo} alt="app_logo" width={100} height={100} />
+            <img src={logo} alt="app_logo" width={50} height={50} loading={'lazy'}/>
           </div>
           {/*  */}
           <div className="header-links">
