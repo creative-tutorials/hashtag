@@ -43,12 +43,6 @@ export function Col1Tabs({}) {
             <span id="span">Coffe Chat</span>
           </Link>
         </div>
-        <div className="tab-em" data-target="Shop">
-          <Link to={"/shop"} style={{ color: "black", textDecoration: "none" }}>
-            <i className="bx bxs-shopping-bag-alt"></i>
-            <span id="span">Shop</span>
-          </Link>
-        </div>
         <div className="tab-em" data-target="Trending">
           <Link
             to={"/trends"}
