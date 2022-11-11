@@ -1,11 +1,9 @@
 import { Col2Tabs } from "../components/design/Col2Tabs";
-import { useRef, useMemo, useState, useEffect } from "react";
-import { ReadFileFromSystem } from "../components/upload/fileReader";
+import { useRef, useMemo, useEffect } from "react";
 import { HashTagQuotes } from "../components/fun/quotes";
 import { Col1Tabs } from "../components/design/col1Tabs";
 import portrait from "/ab1.jpg";
-import React from "react";
-import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
+// import LazyLoad from "react-lazy-load"; /* 👈 Will be used soon 🔜 */
 const HashtagHomePage = () => {
   const dataFetchedRef = useRef(false);
   const _box_item: any = useRef();
@@ -35,14 +33,7 @@ const HashtagHomePage = () => {
       input.current.placeholder = lodge;
     }
   };
-  /**
-   * FetchFileFromFileAPI is a function that takes an event as an argument and calls the
-   * ReadFileFromSystem function with the event as an argument.
-   * @param {any} event - any - The event object that is passed to the function.
-   */
-  const FetchFileFromFileAPI = (event: any) => {
-    ReadFileFromSystem(event);
-  };
+
   return (
     <>
       <div className="cols">
@@ -52,7 +43,6 @@ const HashtagHomePage = () => {
         <Col2Tabs
           portrait={portrait}
           input={input}
-          FetchFileFromFileAPI={FetchFileFromFileAPI}
           _box_item={_box_item}
         />
       </div>

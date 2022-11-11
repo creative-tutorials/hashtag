@@ -89,7 +89,8 @@ function SignupPageComponent() {
   return (
     <div id={design.wrap}>
       <div id={design.form_container}>
-        <p id={design.header}>Sign Up</p>
+        <p id={design.header}>Create</p>
+        <p id={design.header}>Account.</p>
         <div id={design.cms}>
           <div id={design.inputbox}>
             <span>Username</span>
@@ -124,23 +125,8 @@ function SignupPageComponent() {
             <span>Age</span>
             <input type="number" placeholder="age" ref={getAgeField} />
           </div>
-          <div id={design.signoption}>
-            <span>Sign up with</span>
-            <div id={design.options}>
-              <img
-                src="facebook.png"
-                alt="facebook logo"
-                onClick={() => confirm("coming soon")}
-              />
-              <img
-                src="google.png"
-                alt="google logo"
-                onClick={() => confirm("coming soon")}
-              />
-            </div>
-          </div>
           <div id={design.reqbtn}>
-            <button onClick={SubmitFormDetails}>Sign Up</button>
+            <button onClick={SubmitFormDetails}>Register</button>
           </div>
           <div id={design.reqbtn}>
             <p>Already have an account?</p>

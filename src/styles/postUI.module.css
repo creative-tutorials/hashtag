@@ -16,7 +16,8 @@
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .nxd {
   display: flex;
@@ -114,4 +115,26 @@
   overflow: auto;
   scroll-behavior: smooth;
   margin-top: 15px;
+}
+.mediaContent #date {
+  font-size: 14px;
+  color: rgb(51, 62, 66);
+  margin-right: 10px;
+}
+.mediaContent .right_col span {
+  font-weight: 500;
+  font-size: 15px;
+}
+.mediaContent .right_col {
+  display: flex;
+  align-items: center;
+}
+.mediaContent .right_col #dropdwnbtn i {
+  padding: 5px 5px;
+  background-color: rgb(198, 217, 224);
+  color: rgb(57, 64, 66);
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50%;
 }

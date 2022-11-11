@@ -77,7 +77,18 @@ function LoginPageComponent() {
   return (
     <div id={login_design.wrap}>
       <div id={login_design.form_container}>
-        <p id={login_design.header}>Log In</p>
+        <p id={login_design.header}>Hello.</p>
+        <p id={login_design.header}>Welcome Back</p>
+        <div id={login_design.signoption}>
+          <div id={login_design.options} onClick={() => confirm("coming soon")}>
+            <img src="facebook.svg" alt="facebook logo" />
+            <p>Sign in with Facebook</p>
+          </div>
+          <div id={login_design.options} onClick={() => confirm("coming soon")}>
+            <img src="google.svg" alt="google logo" />
+            <p>Sign in with Google</p>
+          </div>
+        </div>
         <div id={login_design.cms}>
           <div id={login_design.inputbox}>
             <span>Email</span>
@@ -104,27 +115,12 @@ function LoginPageComponent() {
           <p id={login_design.fgtpassword}>
             <Link to={`/forgot-password`}>Forgot password?</Link>
           </p>
-          <div id={login_design.signoption}>
-            <span>Sign in with</span>
-            <div id={login_design.options}>
-              <img
-                src="facebook.png"
-                alt="facebook logo"
-                onClick={() => confirm("coming soon")}
-              />
-              <img
-                src="google.png"
-                alt="google logo"
-                onClick={() => confirm("coming soon")}
-              />
-            </div>
-          </div>
           <div id={login_design.reqbtn}>
             <button onClick={SubmitFormDetails}>Log In</button>
           </div>
           <div id={login_design.reqbtn}>
-            <p>Don't have an account</p>
-            <Link to={`/signup`}>Sign up</Link>
+            <p>Don't have an account?</p>
+            <Link to={`/signup`}>Register</Link>
           </div>
         </div>
       </div>

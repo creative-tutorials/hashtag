@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "../styles/profile.css";
 import { EditUserProfile } from "../auth/EditUserProfile";
-import { FetchProfileDataFromAPI } from "../function/FetchProfile";
+import { FetchProfileDataFromAPI } from "../function/profile/FetchProfile";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 const TrendsHeader = lazy(() => import("../components/trends/TrendsHeader"));
