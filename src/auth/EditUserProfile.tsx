@@ -1,4 +1,4 @@
-import { UpdateProfile } from "../function/UpdateProfile";
+import { UpdateProfile } from "../function/profile/UpdateProfile";
 import "../styles/profile.css";
 import { useRef, useState } from "react";
 export function EditUserProfile({
