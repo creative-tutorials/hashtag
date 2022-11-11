@@ -1,25 +1,30 @@
+import { ReadFileFromSystem } from "../../function/upload/fileReader";
 import { HashPostComponent } from "../posts/getpost";
 import { ImageComponent } from "../posts/getImagePost";
 import { InputPopUp } from "./textBox";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "/3.png";
-export function Col2Tabs({
-  portrait,
-  input,
-  FetchFileFromFileAPI,
-  _box_item,
-}: any) {
+export function Col2Tabs({ portrait, input, _box_item }: any) {
   const [LSKeyState, setcheckLSKeyState] = useState(false);
   const FireComponent = () => {
     setcheckLSKeyState(true);
+  };
+  const FetchFileFromFileAPI = (event: any) => {
+    ReadFileFromSystem(event);
   };
   return (
     <div className="col-2">
       <div id="header-wrapper">
         <div className="header-left-item">
           <div className="img">
-            <img src={logo} alt="app_logo" width={50} height={50} loading={'lazy'}/>
+            <img
+              src={logo}
+              alt="app_logo"
+              width={50}
+              height={50}
+              loading={"lazy"}
+            />
           </div>
           {/*  */}
           <div className="header-links">
