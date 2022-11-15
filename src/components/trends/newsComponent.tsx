@@ -1,6 +1,6 @@
-import { TrendBoxComponent } from "./trendBoxComponent";
+import { RederedContent } from "./renderedContent";
 import { useEffect, useRef } from "react";
-export function DataComponent({ data, props, style, dataRef }: any) {
+export function NewsComponent({ data, props, style, dataRef }: any) {
   const trendsContainer: any = useRef();
   let checkRenderedLimit = 0;
   useEffect(() => {
@@ -16,12 +16,12 @@ export function DataComponent({ data, props, style, dataRef }: any) {
   return (
     <>
       <span id={style.top_text}>
-        <p>Discover trends from around the world</p>
-        <h3>Let’s Discover Some Trends</h3>
+        <p>Discover & Read news from around the world</p>
+        <h3>Let’s Start Reading today</h3>
       </span>
       <div id={style.trends_container} ref={trendsContainer}>
         {dataRef.map(function (item: any, index: any) {
-          return <TrendBoxComponent style={style} index={index} item={item} />;
+          return <RederedContent style={style} val={index} item={item} />;
         })}
       </div>
     </>

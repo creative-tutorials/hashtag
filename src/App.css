@@ -114,6 +114,28 @@
   font-size: 1.4rem;
   color: #66767d;
 }
+.col-1-tab-account {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eff0f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+#col-error {
+  margin-top: 10px;
+  color: #DC3535;
+  background-color: #e9acac;
+  border: 1px solid #ee8a8a;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.acnt-tab-left img {
+  border-radius: 50%;
+}
 .col-2 {
   width: 100%;
 }

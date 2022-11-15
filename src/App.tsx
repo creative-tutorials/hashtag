@@ -7,9 +7,9 @@ import ProtectedRoute from "./ProtectedRoute";
 const HashtagHomePage = lazy(() => import("./pages/Home"));
 const LoginPageComponent = lazy(() => import("./pages/Login"));
 const SignupPageComponent = lazy(() => import("./pages/Signup"));
-const TrendsPage = lazy(() => import("./pages/trendHomePage"));
+const NewsPage = lazy(() => import("./pages/news"));
 const ProfilePage = lazy(() => import("./pages/profile"));
-// const  = lazy(() => import("./components/loader"));
+const AdminControl = lazy(() => import("./auth/admin"));
 function App() {
   return (
     <div className="App">
@@ -25,7 +25,10 @@ function App() {
               <Route path="profile" element={<ProfilePage />} />
             </Route>
             <Route element={<ProtectedRoute />}>
-              <Route path="trends" element={<TrendsPage />} />
+              <Route path="news" element={<NewsPage />} />
+            </Route>
+            <Route element={<ProtectedRoute />}>
+              <Route path="admin" element={<AdminControl />} />
             </Route>
           </Routes>
         </Suspense>

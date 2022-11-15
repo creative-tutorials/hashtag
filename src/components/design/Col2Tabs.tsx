@@ -1,7 +1,7 @@
 import { ReadFileFromSystem } from "../../function/upload/fileReader";
 import { HashPostComponent } from "../posts/getpost";
 import { ImageComponent } from "../posts/getImagePost";
-import { InputPopUp } from "./textBox";
+import InputPopUp  from "./textBox";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "/3.png";
@@ -44,7 +44,7 @@ export function Col2Tabs({ portrait, input, _box_item }: any) {
         </div>
         <div className="header-right-item">
           <div className="header-links-2">
-            <Link to={"/"}>
+            <Link to={"/admin"}>
               <span>
                 <i className="bx bx-universal-access"></i>
               </span>
@@ -57,11 +57,6 @@ export function Col2Tabs({ portrait, input, _box_item }: any) {
             <Link to={"/"}>
               <span>
                 <i className="bx bx-log-out bx-rotate-180"></i>
-              </span>
-            </Link>
-            <Link to={"/"}>
-              <span>
-                <i className="bx bx-coffee"></i>
               </span>
             </Link>
           </div>
@@ -102,7 +97,6 @@ export function Col2Tabs({ portrait, input, _box_item }: any) {
       <HashPostComponent />
       <ImageComponent />
       <InputPopUp
-        componentfunction={FireComponent}
         LSKeyState={LSKeyState}
         setcheckLSKeyState={setcheckLSKeyState}
       />

@@ -37,7 +37,6 @@ function SignupPageComponent() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            id: 200,
             email: email,
             username: username,
             password: password,

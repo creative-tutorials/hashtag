@@ -2,7 +2,7 @@ import React from "react";
 import logo from "/3.png";
 import "../../App.css";
 import { Link } from "react-router-dom";
-export default function TrendsHeader({}: any) {
+export default function Header({}: any) {
   return (
     <div id="header-wrapper">
       <div className="header-left-item">
@@ -27,7 +27,7 @@ export default function TrendsHeader({}: any) {
       </div>
       <div className="header-right-item">
         <div className="header-links-2">
-          <Link to={"/"}>
+          <Link to={"/admin"}>
             <span>
               <i className="bx bx-universal-access"></i>
             </span>
@@ -40,11 +40,6 @@ export default function TrendsHeader({}: any) {
           <Link to={"/"}>
             <span>
               <i className="bx bx-log-out bx-rotate-180"></i>
-            </span>
-          </Link>
-          <Link to={"/"}>
-            <span>
-              <i className="bx bx-coffee"></i>
             </span>
           </Link>
         </div>

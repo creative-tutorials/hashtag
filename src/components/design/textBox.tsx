@@ -1,34 +1,26 @@
 import "../../styles/designlab.css";
-
-import { useRef, useMemo, useState } from "react";
-export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:any) {
-  let errorMessage = useRef("");
-  /**
-   * A hook that checks if the localStorage key is set.
-   * @returns A boolean that is true if the key is set.
-   */
+import { useRef, useState } from "react";
+export default function InputPopUp({
+  LSKeyState,
+  setcheckLSKeyState,
+}: any) {
   const textAreaInputElement: any = useRef();
-  const wrapBox: any = useRef();
-  let limitRendering: any = useRef(0);
-  const spanElement: any = useRef();
-  const memoValue = useMemo(() => errorMessage, [errorMessage]);
   const [detectFormError, setdetectFormError] = useState(false);
+  const [errorMessage, seterrorMessage] = useState();
 
   const HashButton = () => {
     const text_box = textAreaInputElement.current;
     if (!text_box.value) {
-      errorMessage.current =
-        "Hey There before you can make a post you would need to type something first :)";
+      seterrorMessage("Hey There before you can make a post you would need to type something first :)");
       setdetectFormError(true);
-      spanElement.current.textContent = memoValue.current;
     } else {
       SendInputFieldDataToAPI(text_box.value);
     }
   };
-  const Session:any = localStorage.getItem('session');
+  const Session: any = localStorage.getItem("session");
   const parsedData = JSON.parse(Session);
-  async function SendInputFieldDataToAPI(field: string,) {
-    if(Session) {
+  async function SendInputFieldDataToAPI(field: string) {
+    if (Session) {
       try {
         const response = await fetch("http://localhost:5301/post", {
           method: "POST",
@@ -39,47 +31,31 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
           body: JSON.stringify({
             post: field,
             email: parsedData.email,
-            status: 'posting...',
-            created: 'waiting...',
             password: parsedData.password,
           }),
         });
-  
+
         if (response.ok) {
           const result = await response.json();
-          errorMessage.current = result.message;
           setdetectFormError(false);
-          spanElement.current.textContent = memoValue.current;
         }
         if (!response.ok) {
           const result = await response.json();
-          errorMessage.current = result.error;
+          seterrorMessage(result.error);
           setdetectFormError(true);
-          spanElement.current.textContent = memoValue.current;
           setTimeout(() => {
-            setcheckLSKeyState(false)
+            setcheckLSKeyState(false);
           }, 10000);
         }
       } catch (err) {
         console.error(err);
       }
-    } else {
-      const error = "Unexpected Error: Looks like we couldn't find your session details, try creating an account to fix this issue"
-      errorMessage.current = error;
-      setdetectFormError(true);
-      spanElement.current.textContent = memoValue.current;
-      setTimeout(() => {
-        setcheckLSKeyState(false)
-      }, 10000);
     }
   }
   return (
-    <div className={LSKeyState ? "textBox active" : "textBox"} ref={wrapBox}>
+    <div className={LSKeyState ? "textBox active" : "textBox"}>
       <div id="box-cols">
-        <div
-          id="bx-cl-left"
-          onClick={() => setcheckLSKeyState(false)}
-        >
+        <div id="bx-cl-left" onClick={() => setcheckLSKeyState(false)}>
           <i className="bx bx-arrow-back"></i>
         </div>
         <div id="bx-cl-right">
@@ -96,7 +72,7 @@ export function InputPopUp({componentfunction, LSKeyState, setcheckLSKeyState}:a
           className={detectFormError ? "active" : undefined}
         ></textarea>
         <div className={detectFormError ? "error-component" : undefined}>
-          <span id="error" ref={spanElement}></span>
+          <span id="error">{errorMessage}</span>
         </div>
       </div>
     </div>

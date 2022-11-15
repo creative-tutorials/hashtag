@@ -4,7 +4,7 @@ import { EditUserProfile } from "../auth/EditUserProfile";
 import { FetchProfileDataFromAPI } from "../function/profile/FetchProfile";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-const TrendsHeader = lazy(() => import("../components/trends/TrendsHeader"));
+const Header = lazy(() => import("../components/trends/Header"));
 const ProfileImage = lazy(
   () => import("../components/profile-component/ProfileImage")
 );
@@ -39,7 +39,7 @@ export default function ProfilePage() {
   return (
     <div className="profile_wrapper">
       <Suspense fallback={<div>Loading...</div>}>
-        <TrendsHeader />
+        <Header />
         <BannerProfile bannerImg={bannerImgSrc} />
       </Suspense>
       <div className="main-profile">
