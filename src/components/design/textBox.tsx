@@ -6,7 +6,7 @@ export default function InputPopUp({
 }: any) {
   const textAreaInputElement: any = useRef();
   const [detectFormError, setdetectFormError] = useState(false);
-  const [errorMessage, seterrorMessage] = useState();
+  const [errorMessage, seterrorMessage] = useState('');
 
   const HashButton = () => {
     const text_box = textAreaInputElement.current;
