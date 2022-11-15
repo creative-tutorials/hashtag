@@ -37,6 +37,7 @@ export default function InputPopUp({
 
         if (response.ok) {
           const result = await response.json();
+          seterrorMessage(result.message)
           setdetectFormError(false);
         }
         if (!response.ok) {
